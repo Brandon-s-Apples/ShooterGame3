@@ -10,6 +10,19 @@ public class LineSegment {
 
     }
 
+    public double getSlope() {
+        double xDiff = startLoc.getX() - endLoc.getX();
+        double yDiff = startLoc.getY() - endLoc.getY();
+
+        return yDiff / xDiff;
+
+    }
+
+    public double getYIntercept() {
+        return -(getSlope() * startLoc.getX()) + startLoc.getY();
+
+    }
+
     public boolean contains(Coordinate coordinate) {
         if(coordinate.distanceFrom(startLoc) == coordinate.distanceFrom(endLoc)) return true;
         else return false;
