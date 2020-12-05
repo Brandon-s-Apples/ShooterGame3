@@ -55,6 +55,13 @@ public class Coordinate {
 
     }
 
+    public double distanceFrom(Coordinate location) {
+        double xDiff = xLoc - location.getX();
+        double yDiff = yLoc - location.getY();
+        return Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
+
+    }
+
     public double getX() {return xLoc;}
     public double getY() {return yLoc;}
 
