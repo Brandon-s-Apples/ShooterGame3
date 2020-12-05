@@ -2,7 +2,7 @@ package main.coordinatePlane;
 
 public class Coordinate {
 
-    public double xLoc, yLoc;
+    private double xLoc, yLoc;
 
     public Coordinate(double xLoc, double yLoc) {
         this.xLoc = xLoc;

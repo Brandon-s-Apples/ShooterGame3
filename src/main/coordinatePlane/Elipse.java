@@ -12,4 +12,12 @@ public class Elipse {
 
     }
 
+    public boolean contains(Coordinate coordinate) {
+        double x = Math.pow((coordinate.getX() - center.getX()), 2) / Math.pow(width, 2);
+        double y = Math.pow((coordinate.getY() - center.getY()), 2) / Math.pow(height, 2);
+        if (x + y <= 1) return true;
+        return false;
+
+    }
+
 }
