@@ -23,9 +23,31 @@ public class LineSegment {
 
     }
 
+    public double getLowXBound() {
+        return Math.min(startLoc.getX(), endLoc.getX());
+
+    }
+
+    public double getHighXBound() {
+        return Math.max(startLoc.getX(), endLoc.getX());
+
+    }
+
+    public double getLowYBound() {
+        return Math.min(startLoc.getY(), endLoc.getY());
+
+    }
+
+    public double getHighYBound() {
+        return Math.max(startLoc.getY(), endLoc.getY());
+
+    }
+
     public boolean contains(Coordinate coordinate) {
-        if(coordinate.distanceFrom(startLoc) == coordinate.distanceFrom(endLoc)) return true;
-        else return false;
+        if(getLowXBound() <= coordinate.getX() && getHighXBound() >= coordinate.getX())
+            if(coordinate.getY() == (getSlope() * coordinate.getX()) + getYIntercept()) return true;
+
+        return false;
 
     }
 
