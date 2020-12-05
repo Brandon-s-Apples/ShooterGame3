@@ -34,7 +34,20 @@ public class Velocity {
 
     }
 
+    public Velocity(Velocity velocity) {
+        xVel = velocity.getXVel();
+        yVel = velocity.getYVel();
+
+    }
+
+    public void addVelocity(Velocity velocity) {
+        xVel += velocity.getXVel();
+        yVel += velocity.getYVel();
+
+    }
+
     public double getAngle() {
+        if(getSpeed() == 0) return 0;
         double retVal = Math.toDegrees(Math.atan(xVel / yVel));
         if(yVel <= 0) {
             if(!(xVel > 0 && yVel == 0)) retVal += 180;
@@ -46,6 +59,16 @@ public class Velocity {
 
     public double getSpeed() {
         return Math.sqrt(Math.pow(xVel, 2) + Math.pow(yVel, 2));
+
+    }
+
+    public double getXVel() {
+        return xVel;
+
+    }
+
+    public double getYVel() {
+        return yVel;
 
     }
 

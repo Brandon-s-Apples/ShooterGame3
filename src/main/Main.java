@@ -3,11 +3,11 @@ package main;
 public class Main {
 
     public static void main(String[] args) {
-        Velocity coordinate = new Velocity(225, 120);
-        System.out.println(coordinate);
+        Velocity velocity = new Velocity(225, 120);
+        System.out.println(velocity);
 
-//        coordinate.moveAD(135, 100);
-//        System.out.println(coordinate);
+        velocity.addVelocity(new Velocity(100, 120));
+        System.out.println(velocity);
 
     }
 
