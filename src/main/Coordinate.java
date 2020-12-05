@@ -17,12 +17,24 @@ public class Coordinate {
     }
 
     public void moveAD(double angle, double distance) {
+        while(angle >= 360) angle -= 360;
+        while(angle < 0) angle += 360;
+
+        boolean flip = false;
+        if(angle >= 180) {
+            angle -= 180;
+            flip = true;
+
+        }
+        if(angle > 90) flip = !flip;
+
         final double tanAngle = Math.tan(Math.toRadians(angle));
 
         double xDiff = (distance * tanAngle) / Math.sqrt(Math.pow(tanAngle, 2) + 1);
         double yDiff = Math.sqrt(Math.pow(distance, 2) - Math.pow(xDiff, 2));
 
-        moveXY(xDiff, yDiff);
+        if(!flip) moveXY(xDiff, yDiff);
+        else moveXY(-xDiff, -yDiff);
 
     }
 
