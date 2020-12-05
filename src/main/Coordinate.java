@@ -10,6 +10,12 @@ public class Coordinate {
 
     }
 
+    public Coordinate(Coordinate coordinate) {
+        this.xLoc = coordinate.getX();
+        this.yLoc = coordinate.getY();
+
+    }
+
     public void moveXY(double xDiff, double yDiff) {
         xLoc += xDiff;
         yLoc += yDiff;
