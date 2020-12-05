@@ -1,7 +1,6 @@
 package main;
 
-import main.coordinatePlane.Coordinate;
-import main.coordinatePlane.LineSegment;
+import main.coordinatePlane.*;
 
 public class Main {
 
