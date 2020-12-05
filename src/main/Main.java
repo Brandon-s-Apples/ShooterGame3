@@ -1,5 +1,8 @@
 package main;
 
+import main.coordinatePlane.Coordinate;
+import main.coordinatePlane.LineSegment;
+
 public class Main {
 
     public static void main(String[] args) {

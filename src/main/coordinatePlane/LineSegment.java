@@ -1,4 +1,4 @@
-package main;
+package main.coordinatePlane;
 
 public class LineSegment {
 
