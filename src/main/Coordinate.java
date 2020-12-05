@@ -16,7 +16,7 @@ public class Coordinate {
 
     }
 
-    public void moveXY(double xDiff, double yDiff) {
+    public void move(double xDiff, double yDiff) {
         xLoc += xDiff;
         yLoc += yDiff;
 
@@ -39,8 +39,13 @@ public class Coordinate {
         double xDiff = (distance * tanAngle) / Math.sqrt(Math.pow(tanAngle, 2) + 1);
         double yDiff = Math.sqrt(Math.pow(distance, 2) - Math.pow(xDiff, 2));
 
-        if(!flip) moveXY(xDiff, yDiff);
-        else moveXY(-xDiff, -yDiff);
+        if(!flip) move(xDiff, yDiff);
+        else move(-xDiff, -yDiff);
+
+    }
+
+    public void move(Velocity velocity) {
+        move(velocity.getXVel(), velocity.getYVel());
 
     }
 
