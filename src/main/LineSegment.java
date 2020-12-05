@@ -43,7 +43,14 @@ public class LineSegment {
 
     }
 
+    public boolean isVertical() {
+        return startLoc.getX() == startLoc.getY();
+
+    }
+
     public boolean contains(Coordinate coordinate) {
+        if(isVertical() && (getLowYBound() <= coordinate.getY() && getHighYBound() >= coordinate.getY()))
+            return true;
         if(getLowXBound() <= coordinate.getX() && getHighXBound() >= coordinate.getX())
             if(coordinate.getY() == (getSlope() * coordinate.getX()) + getYIntercept()) return true;
 
