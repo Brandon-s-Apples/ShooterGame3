@@ -14,12 +14,12 @@ public class Velocity {
             flip = true;
 
         }
-        if(angle > 90) flip = !flip;
 
-        final double tanAngle = Math.tan(Math.toRadians(angle));
+        final double sinAngle = Math.sin(Math.toRadians(angle));
+        final double cosAngle = Math.cos(Math.toRadians(angle));
 
-        double xVal = (distance * tanAngle) / Math.sqrt(Math.pow(tanAngle, 2) + 1);
-        double yVal = Math.sqrt(Math.pow(distance, 2) - Math.pow(xVal, 2));
+        double xVal = distance * sinAngle;
+        double yVal = distance * cosAngle;
 
         if(!flip) {
             this.xVel = xVal;
