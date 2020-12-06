@@ -3,6 +3,7 @@ package main.coordinatePlane;
 public class Velocity {
 
     private double xVel, yVel;
+    private double maxSpeed;
 
     public Velocity(double angle, double distance) {
         while(angle >= 360) angle -= 360;
@@ -31,6 +32,7 @@ public class Velocity {
             this.yVel = -yVal;
 
         }
+        maxSpeed = -1;
 
     }
 
@@ -40,9 +42,27 @@ public class Velocity {
 
     }
 
+    public void setMaxSpeed(double speed) {
+        maxSpeed = Math.abs(speed);
+
+    }
+
+    public void removeMaxSpeed() {
+        maxSpeed = -1;
+
+    }
+
     public void addVelocity(Velocity velocity) {
         xVel += velocity.getXVel();
         yVel += velocity.getYVel();
+        if(maxSpeed != -1 && getSpeed() > maxSpeed) setSpeed(maxSpeed);
+
+    }
+
+    public void setSpeed(double speed) {
+        Velocity tempVel = new Velocity(getAngle(), speed);
+        xVel = tempVel.getXVel();
+        yVel = tempVel.getYVel();
 
     }
 

@@ -13,6 +13,7 @@ public abstract class Entity extends JLabel {
 
     private Coordinate location;
     private Velocity velocity;
+    private double maxSpeed;
 
     public Entity(Coordinate location) {
         this.location = new Coordinate(location);
@@ -22,8 +23,13 @@ public abstract class Entity extends JLabel {
     public abstract void update();
     public abstract void paintComponent(Graphics graphics);
 
-    public void move() {
+    void move() {
         location.move(velocity);
+
+    }
+
+    public void addVelocity(Velocity velocity) {
+        velocity.addVelocity(velocity);
 
     }
 
