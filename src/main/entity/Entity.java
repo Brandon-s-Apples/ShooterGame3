@@ -1,5 +1,6 @@
-package main;
+package main.entity;
 
+import main.Main;
 import main.coordinatePlane.Coordinate;
 import main.coordinatePlane.Velocity;
 

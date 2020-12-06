@@ -1,6 +1,7 @@
 package main;
 
 import main.coordinatePlane.*;
+import main.entity.Entity;
 
 import javax.swing.*;
 import java.awt.*;
