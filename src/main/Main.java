@@ -29,7 +29,7 @@ public class Main {
 
         };
 
-        entity.setBounds();
+        entity.setBounds(-950, -550);
         frame.add(entity);
 
     }

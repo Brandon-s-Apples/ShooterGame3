@@ -4,6 +4,7 @@ import main.coordinatePlane.Coordinate;
 import main.coordinatePlane.Velocity;
 
 import javax.swing.*;
+import java.awt.*;
 
 public abstract class Entity extends JLabel {
 
@@ -18,6 +19,7 @@ public abstract class Entity extends JLabel {
     }
 
     public abstract void update();
+    public abstract void paintComponent(Graphics graphics);
 
     public void move() {
         location.move(velocity);
@@ -26,6 +28,13 @@ public abstract class Entity extends JLabel {
 
     public void setBounds() {
         setBounds(location.getIntX() + (Main.windowWidth / 2) - (width / 2), -location.getIntY() + (Main.windowHeight / 2) - (height / 2), width, height);
+
+    }
+
+    public void setBounds(int xOffset, int yOffset) {
+        int wantedXLoc = location.getIntX() + (Main.windowWidth / 2) - (width / 2) + xOffset;
+        int wantedYLoc = -location.getIntY() + (Main.windowHeight / 2) - (height / 2) - yOffset;
+        setBounds(wantedXLoc, wantedYLoc, width, height);
 
     }
 
