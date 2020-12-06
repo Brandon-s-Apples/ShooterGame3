@@ -17,7 +17,7 @@ public abstract class Entity extends JLabel {
 
     }
 
-    abstract void update();
+    public abstract void update();
 
     public void move() {
         location.move(velocity);
@@ -25,7 +25,7 @@ public abstract class Entity extends JLabel {
     }
 
     public void setBounds() {
-        setBounds(location.getIntX() + (Main.windowWidth / 2), -location.getIntY() + (Main.windowHeight / 2), width, height);
+        setBounds(location.getIntX() + (Main.windowWidth / 2) - (width / 2), -location.getIntY() + (Main.windowHeight / 2) - (height / 2), width, height);
 
     }
 
