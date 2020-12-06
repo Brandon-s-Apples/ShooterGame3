@@ -17,6 +17,7 @@ public class Player extends Entity {
     }
 
     public void paintComponent(Graphics graphics) {
+        graphics.fillOval(0, 0, width, height);
 
     }
 

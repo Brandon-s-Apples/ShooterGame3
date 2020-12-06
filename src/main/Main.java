@@ -18,11 +18,7 @@ public class Main {
         frame.setLayout(null);
         frame.setVisible(true);*/
 
-        Velocity velocity = new Velocity(45, 100);
-        velocity.setMaxSpeed(150);
-        System.out.println(velocity);
-        velocity.addVelocity(new Velocity(225, 1000));
-        System.out.println(velocity);
+        
 
     }
 
