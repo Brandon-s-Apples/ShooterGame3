@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class Player extends JLabel {
 
-    ImageIcon appleImageIcon = new ImageIcon("D:/Pictures/apple.png");
-    Coordinate playerLoc;
+    private ImageIcon appleImageIcon = new ImageIcon("D:/Pictures/apple.png");
+    private Coordinate playerLoc;
 
     public Player() {
         setIcon(appleImageIcon);

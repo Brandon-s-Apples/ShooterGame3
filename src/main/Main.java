@@ -18,9 +18,7 @@ public class Main {
         Player player = new Player();
         frame.add(player);
 
-        ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
-        BLabel bkg = new BLabel(bkgImageIcon);
-        bkg.setBounds(0, 0, bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
+        Background bkg = new Background();
         frame.add(bkg);
 
         frame.addKeyListener(new KeyListener() {
@@ -52,8 +50,7 @@ public class Main {
                         break;
 
                 }
-
-                bkg.setBounds(player.getPlayerLoc().getIntX(), player.getPlayerLoc().getIntY(), bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
+                bkg.updateGraphics(player.getPlayerLoc());
 
             }
 

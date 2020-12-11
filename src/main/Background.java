@@ -4,11 +4,12 @@ import javax.swing.*;
 
 public class Background extends BLabel {
 
-    ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
+    private ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
 
     public Background() {
         super();
         setIcon(bkgImageIcon);
+        setBounds(0, 0, bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
 
     }
 

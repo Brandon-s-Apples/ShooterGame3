@@ -11,9 +11,9 @@ public class BLabel extends JLabel {
 
     }
 
-    public static void setFrameDimension(int width, int height) {
-        BLabel.frameWidth = width;
-        BLabel.frameHeight = height;
+    public static void setFrameDimension(int frameWidth, int frameHeight) {
+        BLabel.frameWidth = frameWidth;
+        BLabel.frameHeight = frameHeight;
 
     }
 
