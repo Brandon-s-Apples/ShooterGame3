@@ -16,6 +16,12 @@ public class Coordinate {
 
     }
 
+    public void moveV(Velocity velocity) {
+        xLoc += velocity.getX();
+        yLoc += velocity.getY();
+
+    }
+
     public void moveXY(double xDiff, double yDiff) {
         xLoc += xDiff;
         yLoc += yDiff;
