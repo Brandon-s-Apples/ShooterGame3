@@ -1,6 +1,7 @@
 package main;
 
 import javax.swing.*;
+import java.security.Key;
 
 public class Player extends BLabel {
 
@@ -21,6 +22,9 @@ public class Player extends BLabel {
         if(Keyboard.getKey(Keyboard.a)) playerVel.addAD(270, 1);
         if(Keyboard.getKey(Keyboard.s)) playerVel.addAD(180, 1);
         if(Keyboard.getKey(Keyboard.d)) playerVel.addAD(90, 1);
+
+        if(!Keyboard.getKey(Keyboard.w) && !Keyboard.getKey(Keyboard.s)) playerVel.slowY(0.9);
+        if(!Keyboard.getKey(Keyboard.a) && !Keyboard.getKey(Keyboard.d)) playerVel.slowX(0.9);
 
         playerLoc.moveV(playerVel);
 

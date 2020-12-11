@@ -33,6 +33,22 @@ public class Velocity {
 
     }
 
+    public void slowX(double value) {
+        xVel *= value;
+
+    }
+
+    public void slowY(double value) {
+        yVel *= value;
+
+    }
+
+    public void slow(double value) {
+        xVel *= value;
+        yVel *= value;
+
+    }
+
     public void checkSpeed() {
         if(getSpeed() > maxSpeed && maxSpeed != -1) {
             xVel *= maxSpeed / getSpeed();

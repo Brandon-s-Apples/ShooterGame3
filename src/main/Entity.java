@@ -2,19 +2,26 @@ package main;
 
 import javax.swing.*;
 
-public class Entity extends BLabel {
+public abstract class Entity extends BLabel {
 
-    private ImageIcon imageIcon = new ImageIcon("D:/Pictures/blue circle.png");
+    private ImageIcon imageIcon;
     private Coordinate loc;
+    private Velocity velocity;
 
     public Entity() {
-        setIcon(imageIcon);
         loc = new Coordinate(0, 500);
+        velocity = new Velocity(0, 0);
+
+    }
+
+    public void setImageIcon(ImageIcon imageIcon) {
+        this.imageIcon = new ImageIcon(imageIcon.getImage());
 
     }
 
     public void update() {
-        loc.moveAD(135, 5);
+        velocity.addAD(135, 0.01);
+        loc.moveV(velocity);
 
     }
 

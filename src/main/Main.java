@@ -20,7 +20,7 @@ public class Main {
         Player player = new Player();
         frame.add(player);
 
-        Entity entity = new Entity();
+        Slime entity = new Slime();
         frame.add(entity);
 
         Background bkg = new Background();
