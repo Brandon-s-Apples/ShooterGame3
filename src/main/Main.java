@@ -1,10 +1,10 @@
 package main;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class Main {
+
+    public static final int windowWidth = 1900, windowHeight = 1100;
 
     public static void main(String[] args) {
 
@@ -13,24 +13,23 @@ public class Main {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1900, 1100);
 
-        BLabel.setFrameDimension(1900, 1100);
         Keyboard.init();
         frame.addKeyListener(Keyboard.getKeyListener());
 
-        Player player = new Player();
+        Player player = new Player(windowWidth, windowHeight);
         frame.add(player);
 
-        Slime entity = new Slime();
+        Slime entity = new Slime(windowWidth, windowHeight);
         frame.add(entity);
 
-        Background bkg = new Background();
+        Background bkg = new Background(windowWidth, windowHeight);
         frame.add(bkg);
 
         frame.setVisible(true);
 
         while(true) {
             player.update();
-            entity.update();
+            entity.updateLoc();
 
             bkg.updateGraphics(player.getPlayerLoc());
             entity.updateGraphics(player.getPlayerLoc());

@@ -6,8 +6,8 @@ public class Background extends BLabel {
 
     private ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
 
-    public Background() {
-        super();
+    public Background(int frameWidth, int frameHeight) {
+        super(frameWidth, frameHeight);
         setIcon(bkgImageIcon);
         setBounds(0, 0, bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
 

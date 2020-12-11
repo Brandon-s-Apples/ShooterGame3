@@ -9,7 +9,8 @@ public class Player extends BLabel {
     private Coordinate playerLoc;
     private Velocity playerVel;
 
-    public Player() {
+    public Player(int frameWidth, int frameHeight) {
+        super(frameWidth, frameHeight);
         setIcon(appleImageIcon);
         setBounds(0, 0, appleImageIcon.getIconWidth(), appleImageIcon.getIconHeight());
         playerLoc = new Coordinate(0, 0);

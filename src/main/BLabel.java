@@ -4,16 +4,18 @@ import javax.swing.*;
 
 public class BLabel extends JLabel {
 
-    private static int frameWidth, frameHeight;
+    private int frameWidth, frameHeight;
 
-    public BLabel() {
+    public BLabel(int frameWidth, int frameHeight) {
         super();
+        this.frameWidth = frameWidth;
+        this.frameHeight = frameHeight;
 
     }
 
-    public static void setFrameDimension(int frameWidth, int frameHeight) {
-        BLabel.frameWidth = frameWidth;
-        BLabel.frameHeight = frameHeight;
+    public void setFrameDimension(int frameWidth, int frameHeight) {
+        this.frameWidth = frameWidth;
+        this.frameHeight = frameHeight;
 
     }
 
