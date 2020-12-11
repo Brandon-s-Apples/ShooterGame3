@@ -20,8 +20,13 @@ public class Main {
         cl.setDimension(626, 626);
         cl.setBounds(0, 0);
 
+        Entity en = new Entity();
+        en.setIcon(new ImageIcon("D:/Pictures/apple.png"));
+        en.updateGraphics(0, 0);
+        frame.add(en);
+
         Background bkg = new Background(new ImageIcon("D:/Pictures/SchoologyDown.PNG"));
-        bkg.updateGraphics(500, 500);
+        bkg.updateGraphics(0, 0);
         frame.add(bkg);
 
         frame.setVisible(true);
