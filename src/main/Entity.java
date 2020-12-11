@@ -24,4 +24,9 @@ public abstract class Entity extends BLabel {
 
     }
 
+    public Velocity getVelocity() {
+        return velocity;
+
+    }
+
 }

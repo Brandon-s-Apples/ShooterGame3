@@ -19,8 +19,8 @@ public class Main {
         Player player = new Player(windowWidth, windowHeight);
         frame.add(player);
 
-        Slime entity = new Slime(windowWidth, windowHeight);
-        frame.add(entity);
+        Slime slime = new Slime(windowWidth, windowHeight);
+        frame.add(slime);
 
         Background bkg = new Background(windowWidth, windowHeight);
         frame.add(bkg);
@@ -29,10 +29,10 @@ public class Main {
 
         while(true) {
             player.update();
-            entity.updateLoc();
+            slime.update();
 
             bkg.updateGraphics(player.getPlayerLoc());
-            entity.updateGraphics(player.getPlayerLoc());
+            slime.updateGraphics(player.getPlayerLoc());
             player.updateGraphics();
 
             try {
