@@ -13,10 +13,13 @@ public class Main {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1900, 1100);
 
+        BLabel.setFrameWidth(1900);
+        BLabel.setFrameHeight(1100);
+
         Player player = new Player();
 
         ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
-        JLabel bkg = new JLabel(bkgImageIcon);
+        BLabel bkg = new BLabel(bkgImageIcon);
         bkg.setBounds(0, 0, bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
         frame.add(bkg);
 
