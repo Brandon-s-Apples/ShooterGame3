@@ -2,7 +2,7 @@ package main;
 
 import javax.swing.*;
 
-public class Player extends JLabel {
+public class Player extends BLabel {
 
     private ImageIcon appleImageIcon = new ImageIcon("D:/Pictures/apple.png");
     private Coordinate playerLoc;
