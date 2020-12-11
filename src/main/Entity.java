@@ -6,17 +6,15 @@ public class Entity extends BLabel {
 
     private ImageIcon imageIcon = new ImageIcon("D:/Pictures/blue circle.png");
     private Coordinate loc;
-    private Velocity vel;
 
     public Entity() {
         setIcon(imageIcon);
         loc = new Coordinate(0, 500);
-        vel = new Velocity(135, 6);
 
     }
 
     public void update() {
-        loc.moveV(vel);
+        loc.moveAD(135, 5);
 
     }
 

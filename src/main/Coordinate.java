@@ -22,11 +22,6 @@ public class Coordinate {
 
     }
 
-    public void moveV(Velocity velocity) {
-        moveXY(velocity.getX(), velocity.getY());
-
-    }
-
     public void setX(double value) {
         xLoc = value;
 

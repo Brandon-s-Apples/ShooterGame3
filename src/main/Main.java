@@ -17,11 +17,11 @@ public class Main {
         Keyboard.init();
         frame.addKeyListener(Keyboard.getKeyListener());
 
-        Entity entity = new Entity();
-        frame.add(entity);
-
         Player player = new Player();
         frame.add(player);
+
+        Entity entity = new Entity();
+        frame.add(entity);
 
         Background bkg = new Background();
         frame.add(bkg);
