@@ -19,7 +19,7 @@ public class Main {
         Player player = new Player(windowWidth, windowHeight);
         frame.add(player);
 
-        Slime slime = new Slime(windowWidth, windowHeight);
+        Bullet slime = new Bullet(windowWidth, windowHeight, new Velocity(100, 5));
         frame.add(slime);
 
         Background bkg = new Background(windowWidth, windowHeight);

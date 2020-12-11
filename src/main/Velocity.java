@@ -12,6 +12,13 @@ public class Velocity {
 
     }
 
+    public Velocity(Velocity velocity) {
+        xVel = velocity.getX();
+        yVel = velocity.getY();
+        maxSpeed = velocity.maxSpeed;
+
+    }
+
     public Velocity(double angle, double speed, double maxSpeed) {
         xVel = speed * Math.sin(Math.toRadians(angle));
         yVel = speed * Math.cos(Math.toRadians(angle));
