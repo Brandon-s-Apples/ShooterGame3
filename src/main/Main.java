@@ -14,10 +14,8 @@ public class Main {
 
         CLabel cl = new CLabel(new ImageIcon("D:/Pictures/apple.png"));
         frame.add(cl);
-        cl.setWidth(626);
-        cl.setHeight(626);
-        cl.setBoundWidth(1900);
-        cl.setBoundHeight(1100);
+        cl.setBoundDimension(1900, 1100);
+        cl.setDimension(626, 626);
         cl.setBounds(0, 0);
 
         frame.setVisible(true);

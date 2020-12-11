@@ -36,19 +36,13 @@ public class CLabel extends JLabel {
 
     }
 
-    public void setWidth(int width) {
+    public void setDimension(int width, int height) {
         this.width = width;
-    }
-
-    public void setHeight(int height) {
         this.height = height;
     }
 
-    public void setBoundWidth(int boundWidth) {
+    public void setBoundDimension(int boundWidth, int boundHeight) {
         this.boundWidth = boundWidth;
-    }
-
-    public void setBoundHeight(int boundHeight) {
         this.boundHeight = boundHeight;
     }
 
