@@ -14,6 +14,8 @@ public class Main {
         frame.setSize(1900, 1100);
 
         BLabel.setFrameDimension(1900, 1100);
+        Keyboard.init();
+        frame.addKeyListener(Keyboard.getKeyListener());
 
         Player player = new Player();
         frame.add(player);
@@ -21,47 +23,20 @@ public class Main {
         Background bkg = new Background();
         frame.add(bkg);
 
-        frame.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException interruptedException) {
-                    interruptedException.printStackTrace();
-                }
-
-                switch(e.getKeyChar()) {
-                    case 'w':
-                        player.getPlayerLoc().moveAD(0, 10);
-                        break;
-                    case 'a':
-                        player.getPlayerLoc().moveAD(270, 10);
-                        break;
-                    case 's':
-                        player.getPlayerLoc().moveAD(180, 10);
-                        break;
-                    case 'd':
-                        player.getPlayerLoc().moveAD(90, 10);
-                        break;
-
-                }
-                bkg.updateGraphics(player.getPlayerLoc());
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-
-        });
-
         frame.setVisible(true);
+
+        while(true) {
+            player.update();
+
+            bkg.updateGraphics(player.getPlayerLoc());
+            player.updateGraphics();
+
+            try {
+                Thread.sleep(15);
+
+            } catch (InterruptedException e) {}
+
+        }
 
     }
 

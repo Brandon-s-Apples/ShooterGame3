@@ -44,12 +44,12 @@ public class Keyboard {
 
     }
 
-    public KeyListener getKeyListener() {
+    public static KeyListener getKeyListener() {
         return keyListener;
 
     }
 
-    public boolean getKey(int key) {
+    public static boolean getKey(int key) {
         return keys[key];
 
     }

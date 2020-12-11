@@ -14,6 +14,19 @@ public class Player extends BLabel {
 
     }
 
+    public void update() {
+        if(Keyboard.getKey(Keyboard.w)) playerLoc.moveAD(0, 10);
+        if(Keyboard.getKey(Keyboard.a)) playerLoc.moveAD(270, 10);
+        if(Keyboard.getKey(Keyboard.s)) playerLoc.moveAD(180, 10);
+        if(Keyboard.getKey(Keyboard.d)) playerLoc.moveAD(90, 10);
+
+    }
+
+    public void updateGraphics() {
+
+
+    }
+
     public Coordinate getPlayerLoc() {
         return playerLoc;
 
