@@ -18,7 +18,7 @@ public class BLabel extends JLabel {
     }
 
     public void setBounds(int xLoc, int yLoc, int width, int height) {
-        super.setBounds((frameWidth / 2) + xLoc, (frameHeight / 2) - yLoc - height, width, height);
+        super.setBounds((frameWidth / 2) + xLoc - (width / 2), (frameHeight / 2) - yLoc - (height / 2), width, height);
 
     }
 
