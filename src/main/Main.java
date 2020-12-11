@@ -13,11 +13,7 @@ public class Main {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1900, 1100);
 
-        ImageIcon appleImageIcon = new ImageIcon("D:/Pictures/apple.png");
-        JLabel player = new JLabel(appleImageIcon);
-        Coordinate playerLoc = new Coordinate(0, 0);
-        player.setBounds(950, 550, appleImageIcon.getIconWidth(), appleImageIcon.getIconHeight());
-        frame.add(player);
+        Player player = new Player();
 
         ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
         JLabel bkg = new JLabel(bkgImageIcon);
@@ -40,21 +36,21 @@ public class Main {
 
                 switch(e.getKeyChar()) {
                     case 'w':
-                        playerLoc.moveAD(45, 10);
+                        player.getPlayerLoc().moveAD(0, 10);
                         break;
                     case 'a':
-                        playerLoc.moveAD(315, 10);
+                        player.getPlayerLoc().moveAD(270, 10);
                         break;
                     case 's':
-                        playerLoc.moveAD(225, 10);
+                        player.getPlayerLoc().moveAD(180, 10);
                         break;
                     case 'd':
-                        playerLoc.moveAD(135, 10);
+                        player.getPlayerLoc().moveAD(90, 10);
                         break;
 
                 }
 
-                bkg.setBounds(playerLoc.getIntX(), playerLoc.getIntY(), bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
+                bkg.setBounds(player.getPlayerLoc().getIntX(), player.getPlayerLoc().getIntY(), bkgImageIcon.getIconWidth(), bkgImageIcon.getIconHeight());
 
             }
 
