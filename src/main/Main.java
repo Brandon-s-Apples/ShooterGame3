@@ -20,6 +20,10 @@ public class Main {
         cl.setDimension(626, 626);
         cl.setBounds(0, 0);
 
+        Background bkg = new Background(new ImageIcon("D:/Pictures/SchoologyDown.PNG"));
+        bkg.updateGraphics(500, 500);
+        frame.add(bkg);
+
         frame.setVisible(true);
 
     }
