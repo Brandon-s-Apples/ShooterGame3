@@ -40,16 +40,16 @@ public class Main {
 
                 switch(e.getKeyChar()) {
                     case 'w':
-                        playerLoc.moveXY(0, 10);
+                        playerLoc.moveAD(45, 10);
                         break;
                     case 'a':
-                        playerLoc.moveXY(10, 0);
+                        playerLoc.moveAD(315, 10);
                         break;
                     case 's':
-                        playerLoc.moveXY(0, -10);
+                        playerLoc.moveAD(225, 10);
                         break;
                     case 'd':
-                        playerLoc.moveXY(-10, 0);
+                        playerLoc.moveAD(135, 10);
                         break;
 
                 }
