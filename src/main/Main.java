@@ -30,6 +30,7 @@ public class Main {
 
         while(true) {
             player.update();
+            entity.update();
 
             bkg.updateGraphics(player.getPlayerLoc());
             entity.updateGraphics(player.getPlayerLoc());
