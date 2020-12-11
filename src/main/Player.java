@@ -9,7 +9,7 @@ public class Player extends BLabel {
 
     public Player() {
         setIcon(appleImageIcon);
-        setBounds(950, 550, appleImageIcon.getIconWidth(), appleImageIcon.getIconHeight());
+        setBounds(0, 0, appleImageIcon.getIconWidth(), appleImageIcon.getIconHeight());
         playerLoc = new Coordinate(0, 0);
 
     }
