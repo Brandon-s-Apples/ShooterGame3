@@ -16,6 +16,7 @@ public class Main {
         BLabel.setFrameDimension(1900, 1100);
 
         Player player = new Player();
+        frame.add(player);
 
         ImageIcon bkgImageIcon = new ImageIcon("D:/Pictures/SchoologyDown.PNG");
         BLabel bkg = new BLabel(bkgImageIcon);

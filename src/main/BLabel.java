@@ -6,8 +6,8 @@ public class BLabel extends JLabel {
 
     private static int frameWidth, frameHeight;
 
-    public BLabel(ImageIcon image) {
-        super(image);
+    public BLabel() {
+        super();
 
     }
 
