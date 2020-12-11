@@ -17,6 +17,9 @@ public class Main {
         Keyboard.init();
         frame.addKeyListener(Keyboard.getKeyListener());
 
+        Entity entity = new Entity();
+        frame.add(entity);
+
         Player player = new Player();
         frame.add(player);
 
@@ -29,6 +32,7 @@ public class Main {
             player.update();
 
             bkg.updateGraphics(player.getPlayerLoc());
+            entity.updateGraphics(player.getPlayerLoc());
             player.updateGraphics();
 
             try {
