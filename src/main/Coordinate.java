@@ -34,6 +34,14 @@ public class Coordinate {
 
     }
 
+    public double getX() {
+        return xLoc;
+    }
+
+    public double getY() {
+        return yLoc;
+    }
+
     public String toString() {
         return "(" + xLoc + ", " + yLoc + ")";
 
