@@ -9,6 +9,7 @@ public class BFrame extends JFrame {
         setSize(width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setResizable(false);
 
     }
 
