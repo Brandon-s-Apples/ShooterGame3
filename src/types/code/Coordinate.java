@@ -1,6 +1,4 @@
-package types;
-
-import types.Velocity;
+package types.code;
 
 public class Coordinate {
 

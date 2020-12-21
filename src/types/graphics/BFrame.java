@@ -1,4 +1,4 @@
-package types;
+package types.graphics;
 
 import inputs.Keyboard;
 

@@ -1,8 +1,8 @@
 package main;
 
 import inputs.Constants;
-import types.BFrame;
-import types.BLabel;
+import types.graphics.BFrame;
+import types.graphics.BLabel;
 
 import javax.swing.*;
 
