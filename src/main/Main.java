@@ -1,5 +1,9 @@
 package main;
 
+import inputs.Constants;
+import types.BFrame;
+import types.BLabel;
+
 import javax.swing.*;
 
 public class Main {

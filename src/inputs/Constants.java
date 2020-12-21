@@ -1,4 +1,4 @@
-package main;
+package inputs;
 
 public class Constants {
 

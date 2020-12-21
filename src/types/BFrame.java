@@ -1,4 +1,6 @@
-package main;
+package types;
+
+import inputs.Keyboard;
 
 import javax.swing.*;
 
