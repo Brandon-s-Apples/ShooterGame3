@@ -11,15 +11,18 @@ public class BLabel extends JLabel {
         superDimen = superComp.getSize();
 
     }
+
     public BLabel(JComponent superComp, ImageIcon image) {
         super(image);
         superDimen = superComp.getSize();
 
     }
+
     public BLabel(JFrame superComp) {
         superDimen = superComp.getSize();
 
     }
+
     public BLabel(JFrame superComp, ImageIcon image) {
         super(image);
         superDimen = superComp.getSize();
@@ -28,8 +31,8 @@ public class BLabel extends JLabel {
 
     public void setBounds(double x, double y) {
         setBounds((int) ((superDimen.getWidth() / 2) - ((double) getWidth() / 2) + x),
-                  (int) ((superDimen.getHeight() / 2) - ((double) getHeight() / 2) - y),
-                  getWidth(), getHeight());
+                (int) ((superDimen.getHeight() / 2) - ((double) getHeight() / 2) - y),
+                getWidth(), getHeight());
 
     }
 
