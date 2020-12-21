@@ -16,4 +16,8 @@ public class Player extends BLabel {
 
     }
 
+    public Coordinate getLoc() {
+        return loc;
+    }
+
 }
