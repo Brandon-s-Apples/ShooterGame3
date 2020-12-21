@@ -12,7 +12,6 @@ public class Game extends BLabel {
         setSize(Constants.frameWidth, Constants.frameHeight);
         setBounds(0, 0);
         setIcon(new ImageIcon("D:/Pictures/among-us-map.png"));
-        frame.add(this);
 
     }
 
