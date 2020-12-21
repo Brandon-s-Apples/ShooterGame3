@@ -34,6 +34,12 @@ public class Coordinate {
 
     }
 
+    public void moveV(Velocity velocity) {
+        xLoc += velocity.getX();
+        yLoc += velocity.getY();
+
+    }
+
     public double getX() {
         return xLoc;
     }
