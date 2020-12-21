@@ -7,11 +7,13 @@ import javax.swing.*;
 
 public class Game extends BLabel {
 
+    Background bkg;
+
     public Game(JFrame frame) {
         super(frame);
         setSize(Constants.frameWidth, Constants.frameHeight);
         setBounds(0, 0);
-        setIcon(new ImageIcon("D:/Pictures/among-us-map.png"));
+        bkg = new Background(this);
 
     }
 
