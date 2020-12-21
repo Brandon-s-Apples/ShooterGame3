@@ -11,6 +11,9 @@ public class BFrame extends JFrame {
         setLayout(null);
         setResizable(false);
 
+        Keyboard.init();
+        addKeyListener(Keyboard.getKeyListener());
+
     }
 
 }

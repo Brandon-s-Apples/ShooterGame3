@@ -5,7 +5,8 @@ import java.awt.event.KeyListener;
 
 public class Keyboard {
 
-    private Keyboard() {}
+    private Keyboard() {
+    }
 
     private static boolean active = false;
 
@@ -17,28 +18,68 @@ public class Keyboard {
             active = true;
             keys = new boolean[Constants.supportedKeys];
             keyListener = new KeyListener() {
-                public void keyTyped(KeyEvent e) {}
+                public void keyTyped(KeyEvent e) {
+                }
+
                 public void keyPressed(KeyEvent e) {
                     switch(e.getKeyChar()) {
-                        case 'w': keys[Constants.wKey] = true; break;
-                        case 'a': keys[Constants.aKey] = true; break;
-                        case 's': keys[Constants.sKey] = true; break;
-                        case 'd': keys[Constants.dKey] = true; break;
+                        case 'w':
+                            keys[Constants.wKey] = true;
+                            break;
+                        case 'a':
+                            keys[Constants.aKey] = true;
+                            break;
+                        case 's':
+                            keys[Constants.sKey] = true;
+                            break;
+                        case 'd':
+                            keys[Constants.dKey] = true;
+                            break;
 
                     }
 
                 }
+
                 public void keyReleased(KeyEvent e) {
                     switch(e.getKeyChar()) {
-                        case 'w': keys[Constants.wKey] = false; break;
-                        case 'a': keys[Constants.aKey] = false; break;
-                        case 's': keys[Constants.sKey] = false; break;
-                        case 'd': keys[Constants.dKey] = false; break;
+                        case 'w':
+                            keys[Constants.wKey] = false;
+                            break;
+                        case 'a':
+                            keys[Constants.aKey] = false;
+                            break;
+                        case 's':
+                            keys[Constants.sKey] = false;
+                            break;
+                        case 'd':
+                            keys[Constants.dKey] = false;
+                            break;
 
                     }
 
                 }
             };
+
+        }
+
+    }
+
+    public static KeyListener getKeyListener() {
+        return keyListener;
+    }
+
+    public static boolean getKey(char key) {
+        switch(key) {
+            case 'w':
+                return keys[Constants.wKey];
+            case 'a':
+                return keys[Constants.aKey];
+            case 's':
+                return keys[Constants.sKey];
+            case 'd':
+                return keys[Constants.dKey];
+            default:
+                return false;
 
         }
 
