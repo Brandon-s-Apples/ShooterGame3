@@ -36,6 +36,14 @@ public abstract class Entity extends BLabel {
         vel.setMaxSpeed(val);
     }
 
+    public void setVel(Velocity vel) {
+        this.vel = vel;
+    }
+
+    public void setLoc(Coordinate loc) {
+        this.loc = loc;
+    }
+
     public void setStandWidth(double val) {
         standLoc.setWidth(val);
     }
