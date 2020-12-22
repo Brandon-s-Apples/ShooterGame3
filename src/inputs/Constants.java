@@ -2,6 +2,9 @@ package inputs;
 
 public class Constants {
 
+    // src/game/Entity.java
+    public static final int entityDefaultStandWidth = 100, entityDefaultStandHeight = 50;
+
     // src/game/Game.java
     public static final long gameLoopTimeMillis = 15;
 
