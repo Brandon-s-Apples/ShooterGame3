@@ -24,16 +24,16 @@ public class Keyboard {
                 public void keyPressed(KeyEvent e) {
                     switch(e.getKeyChar()) {
                         case 'w':
-                            keys[Constants.wKey] = true;
+                            keys[Constants.keyboardW] = true;
                             break;
                         case 'a':
-                            keys[Constants.aKey] = true;
+                            keys[Constants.keyboardA] = true;
                             break;
                         case 's':
-                            keys[Constants.sKey] = true;
+                            keys[Constants.keyboardS] = true;
                             break;
                         case 'd':
-                            keys[Constants.dKey] = true;
+                            keys[Constants.keyboardD] = true;
                             break;
 
                     }
@@ -43,16 +43,16 @@ public class Keyboard {
                 public void keyReleased(KeyEvent e) {
                     switch(e.getKeyChar()) {
                         case 'w':
-                            keys[Constants.wKey] = false;
+                            keys[Constants.keyboardW] = false;
                             break;
                         case 'a':
-                            keys[Constants.aKey] = false;
+                            keys[Constants.keyboardA] = false;
                             break;
                         case 's':
-                            keys[Constants.sKey] = false;
+                            keys[Constants.keyboardS] = false;
                             break;
                         case 'd':
-                            keys[Constants.dKey] = false;
+                            keys[Constants.keyboardD] = false;
                             break;
 
                     }
@@ -71,13 +71,13 @@ public class Keyboard {
     public static boolean getKey(char key) {
         switch(key) {
             case 'w':
-                return keys[Constants.wKey];
+                return keys[Constants.keyboardW];
             case 'a':
-                return keys[Constants.aKey];
+                return keys[Constants.keyboardA];
             case 's':
-                return keys[Constants.sKey];
+                return keys[Constants.keyboardS];
             case 'd':
-                return keys[Constants.dKey];
+                return keys[Constants.keyboardD];
             default:
                 return false;
 

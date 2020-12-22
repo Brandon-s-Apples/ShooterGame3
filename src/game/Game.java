@@ -14,7 +14,7 @@ public class Game extends BLabel {
 
     public Game(JFrame frame) {
         super(frame);
-        setSize(Constants.frameWidth, Constants.frameHeight);
+        setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
         setBounds(0, 0);
         bkg = new Background(this);
         player = new Player(this);
@@ -22,7 +22,7 @@ public class Game extends BLabel {
         while(true) {
             timerVar = System.currentTimeMillis();
             update();
-            while(timerVar + Constants.loopTimeMillis >= System.currentTimeMillis());
+            while(timerVar + Constants.gameLoopTimeMillis >= System.currentTimeMillis());
 
         }
 
