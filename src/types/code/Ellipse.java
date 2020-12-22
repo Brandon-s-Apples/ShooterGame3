@@ -12,13 +12,6 @@ public class Ellipse {
 
     }
 
-    public boolean contains(Coordinate loc) {
-        double x = Math.pow(loc.getX() - center.getX(), 2) / Math.pow(width / 2, 2);
-        double y = Math.pow(loc.getY() - center.getY(), 2) / Math.pow(height / 2, 2);
-        return (x + y <= 1);
-
-    }
-
     public void setCenter(Coordinate center) {
         this.center = center;
     }
@@ -29,6 +22,18 @@ public class Ellipse {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public Coordinate getCenter() {
+        return center;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
     }
 
 }
