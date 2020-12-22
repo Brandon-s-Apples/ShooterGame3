@@ -18,7 +18,7 @@ public class Player extends BLabel {
     public Player(JComponent game) {
         super(game);
         loc = new Coordinate(Constants.playerSpawnX, Constants.playerSpawnY);
-        vel = new Velocity(0, 0, Constants.playerMaxSpeed);
+        vel = new Velocity(Constants.playerMaxSpeed);
         standLoc = new Ellipse(loc, Constants.playerStandWidth, Constants.playerStandHeight);
 
     }
@@ -31,10 +31,10 @@ public class Player extends BLabel {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');
         boolean s = Keyboard.getKey('s') && !Keyboard.getKey('w'), d = Keyboard.getKey('d') && !Keyboard.getKey('a');
         if(w) vel.addAD(0, Constants.playerAcceleration);
-        else if(a) vel.addAD(270, Constants.playerAcceleration);
-        else if(s) vel.addAD(180, Constants.playerAcceleration);
-        else if(d) vel.addAD(90, Constants.playerAcceleration);
-        else vel.multiply(Constants.playerDeceleration);
+        if(a) vel.addAD(270, Constants.playerAcceleration);
+        if(s) vel.addAD(180, Constants.playerAcceleration);
+        if(d) vel.addAD(90, Constants.playerAcceleration);
+        if(!(w || a || s || d)) vel.multiply(Constants.playerDeceleration);
 
         loc.moveV(vel);
 

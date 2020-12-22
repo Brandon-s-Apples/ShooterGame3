@@ -35,6 +35,7 @@ public class Velocity {
     public void addXY(double xDiff, double yDiff) {
         xVel += xDiff;
         yVel += yDiff;
+        checkSpeed();
     }
 
     public void addAD(double angle, double distance) {
@@ -48,6 +49,7 @@ public class Velocity {
             yVel += distance * Math.cos(Math.toRadians(angle));
 
         }
+        checkSpeed();
 
     }
 
