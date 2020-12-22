@@ -40,4 +40,9 @@ public class BLabel extends JLabel {
 
     }
 
+    public void setSize(ImageIcon image) {
+        setSize(image.getIconWidth(), image.getIconHeight());
+
+    }
+
 }

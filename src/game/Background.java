@@ -11,7 +11,7 @@ public class Background extends BLabel {
         super(game);
         ImageIcon bkgImg = new ImageIcon("D:/Pictures/FinishedProblems.PNG");
         setIcon(bkgImg);
-        setSize(bkgImg.getIconWidth(), bkgImg.getIconHeight());
+        setSize(bkgImg);
         setBounds(0, 0);
 
     }
