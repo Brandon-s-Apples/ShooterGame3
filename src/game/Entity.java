@@ -13,5 +13,6 @@ public abstract class Entity extends BLabel {
     }
 
     abstract void update();
+    abstract void move();
 
 }
