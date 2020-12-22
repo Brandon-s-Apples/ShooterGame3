@@ -8,12 +8,20 @@ import javax.swing.*;
 
 public abstract class Entity extends BLabel {
 
+    private Coordinate loc;
+    private Velocity vel;
+
     public Entity(JComponent game) {
         super(game);
+        loc = new Coordinate();
+        vel = new Velocity();
 
     }
 
-    abstract void update();
+    public void update() {
+        move(loc, vel);
+
+    }
     abstract void move(Coordinate loc, Velocity vel);
 
 }
