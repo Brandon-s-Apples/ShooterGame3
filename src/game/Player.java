@@ -11,21 +11,17 @@ import javax.swing.*;
 
 public class Player extends Entity {
 
-    private Velocity vel;
-    private Coordinate loc;
     private Ellipse standLoc;
 
     public Player(JComponent game) {
         super(game);
-        loc = new Coordinate(Constants.playerSpawnX, Constants.playerSpawnY);
-        vel = new Velocity(Constants.playerMaxSpeed);
-        standLoc = new Ellipse(loc, Constants.playerStandWidth, Constants.playerStandHeight);
+//        standLoc = new Ellipse(loc, Constants.playerStandWidth, Constants.playerStandHeight);
 
     }
 
-    public Coordinate getLoc() {
-        return loc;
-    }
+//    public Coordinate getLoc() {
+//        return loc;
+//    }
 
     public void move(Coordinate loc, Velocity vel) {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');
