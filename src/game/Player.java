@@ -11,18 +11,11 @@ import javax.swing.*;
 
 public class Player extends Entity {
 
-    private Ellipse standLoc;
-
     public Player(JComponent game) {
         super(game);
         setMaxVel(Constants.playerMaxSpeed);
-//        standLoc = new Ellipse(loc, Constants.playerStandWidth, Constants.playerStandHeight);
 
     }
-
-//    public Coordinate getLoc() {
-//        return loc;
-//    }
 
     void move(Coordinate loc, Velocity vel) {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');

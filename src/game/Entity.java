@@ -30,7 +30,6 @@ public abstract class Entity extends BLabel {
 
     public Coordinate getLoc() {
         return loc;
-
     }
 
     public void setMaxVel(double val) {
