@@ -11,7 +11,7 @@ public class Constants {
     // src/game/Player.java
     public static final double playerSpawnX = 0, playerSpawnY = 0;
     public static final double playerStandWidth = 100, playerStandHeight = 50;
-    public static final double playerAcceleration = 5, playerDeceleration = 10, playerMaxSpeed = 20;
+    public static final double playerAcceleration = 5, playerDeceleration = 0.5, playerMaxSpeed = 20;
 
     // src/inputs/Keyboard.java
     public static final int supportedKeys = 4;

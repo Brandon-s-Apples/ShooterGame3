@@ -34,6 +34,7 @@ public class Player extends BLabel {
         else if(a) vel.addAD(270, Constants.playerAcceleration);
         else if(s) vel.addAD(180, Constants.playerAcceleration);
         else if(d) vel.addAD(90, Constants.playerAcceleration);
+        else vel.multiply(Constants.playerDeceleration);
 
         loc.moveV(vel);
 
