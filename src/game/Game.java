@@ -15,6 +15,16 @@ public class Game extends BLabel {
         setBounds(0, 0);
         bkg = new Background(this);
 
+        while(true) {
+            update();
+
+        }
+
+    }
+
+    public void update() {
+        bkg.update(player.getLoc());
+
     }
 
 }
