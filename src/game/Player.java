@@ -9,7 +9,7 @@ import types.graphics.BLabel;
 
 import javax.swing.*;
 
-public class Player extends BLabel {
+public class Player extends Entity {
 
     private Velocity vel;
     private Coordinate loc;
