@@ -11,5 +11,6 @@ public class Constants {
 
     // src/game/Player.java
     public static final double spawnX = 0, spawnY = 0;
+    public static final double playerStandWidth = 100, playerStandHeight = 50;
 
 }
