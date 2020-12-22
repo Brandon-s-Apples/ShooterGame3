@@ -51,6 +51,12 @@ public class Velocity {
 
     }
 
+    public void multiply(double val) {
+        xVel *= val;
+        yVel *= val;
+
+    }
+
     public void checkSpeed() {
         if(getSpeed() > maxSpeed && maxSpeed != -1) {
             xVel *= maxSpeed / getSpeed();
