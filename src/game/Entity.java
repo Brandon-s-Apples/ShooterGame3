@@ -29,4 +29,8 @@ public abstract class Entity extends BLabel {
 
     }
 
+    public void setMaxVel(double val) {
+        vel.setMaxSpeed(val);
+    }
+
 }

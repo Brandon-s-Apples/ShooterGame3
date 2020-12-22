@@ -15,6 +15,7 @@ public class Player extends Entity {
 
     public Player(JComponent game) {
         super(game);
+        setMaxVel(Constants.playerMaxSpeed);
 //        standLoc = new Ellipse(loc, Constants.playerStandWidth, Constants.playerStandHeight);
 
     }
