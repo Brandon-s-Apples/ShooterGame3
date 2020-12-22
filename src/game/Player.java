@@ -3,9 +3,7 @@ package game;
 import inputs.Constants;
 import inputs.Keyboard;
 import types.code.Coordinate;
-import types.code.Ellipse;
 import types.code.Velocity;
-import types.graphics.BLabel;
 
 import javax.swing.*;
 
@@ -13,6 +11,7 @@ public class Player extends Entity {
 
     public Player(JComponent game) {
         super(game);
+        setLoc(new Coordinate(Constants.playerSpawn));
         setMaxVel(Constants.playerMaxSpeed);
 
     }
