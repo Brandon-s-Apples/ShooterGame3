@@ -24,4 +24,9 @@ public abstract class Entity extends BLabel {
     }
     abstract void move(Coordinate loc, Velocity vel);
 
+    public Coordinate getLoc() {
+        return loc;
+
+    }
+
 }
