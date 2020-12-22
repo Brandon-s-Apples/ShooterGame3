@@ -24,7 +24,7 @@ public class Player extends Entity {
 //        return loc;
 //    }
 
-    public void move(Coordinate loc, Velocity vel) {
+    void move(Coordinate loc, Velocity vel) {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');
         boolean s = Keyboard.getKey('s') && !Keyboard.getKey('w'), d = Keyboard.getKey('d') && !Keyboard.getKey('a');
         if(w) vel.addAD(0, Constants.playerAcceleration);
