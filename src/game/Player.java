@@ -28,11 +28,11 @@ public class Player extends Entity {
     }
 
     public void update() {
-        move();
+        move(loc, vel);
 
     }
 
-    public void move() {
+    public void move(Coordinate loc, Velocity vel) {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');
         boolean s = Keyboard.getKey('s') && !Keyboard.getKey('w'), d = Keyboard.getKey('d') && !Keyboard.getKey('a');
         if(w) vel.addAD(0, Constants.playerAcceleration);
@@ -41,7 +41,7 @@ public class Player extends Entity {
         if(d) vel.addAD(90, Constants.playerAcceleration);
         if(!(w || s)) vel.multiplyY(Constants.playerDeceleration);
         if(!(a || d)) vel.multiplyX(Constants.playerDeceleration);
-        
+
         loc.moveV(vel);
 
     }
