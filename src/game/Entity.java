@@ -22,9 +22,9 @@ public abstract class Entity extends BLabel {
 
     }
 
-    public void update() {
+    public void update(Coordinate playerLoc) {
         move(loc, vel);
-
+        setBounds(playerLoc);
     }
     abstract void move(Coordinate loc, Velocity vel);
 
@@ -46,6 +46,10 @@ public abstract class Entity extends BLabel {
 
     public void setStandWidth(double val) {
         standLoc.setWidth(val);
+    }
+
+    public void setBounds(Coordinate playerLoc) {
+        setBounds(loc.getX() - playerLoc.getX(), loc.getY() - playerLoc.getY());
     }
 
 }

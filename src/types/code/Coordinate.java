@@ -14,6 +14,11 @@ public class Coordinate {
         yLoc = y;
     }
 
+    public Coordinate(Coordinate coordinate) {
+        xLoc = coordinate.getX();
+        yLoc = coordinate.getY();
+    }
+
     public void moveXY(double xDiff, double yDiff) {
         this.xLoc += xDiff;
         this.yLoc += yDiff;
