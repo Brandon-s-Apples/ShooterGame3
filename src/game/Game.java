@@ -1,6 +1,7 @@
 package game;
 
 import game.entity.bullet.BulletList;
+import game.entity.enemy.Enemy;
 import game.entity.player.Player;
 import inputs.*;
 import types.code.*;
@@ -16,6 +17,9 @@ public class Game extends BLabel {
 
     private Coordinate referencePoint;
 
+    // Temporary
+    private Enemy en;
+
     public Game(JFrame frame) {
         super(frame);
         setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
@@ -23,6 +27,8 @@ public class Game extends BLabel {
 
         player = new Player(this);
         referencePoint = player.getLoc();
+
+        en = new Enemy(this);
 
         bulletList = new BulletList(this);
 
@@ -43,6 +49,7 @@ public class Game extends BLabel {
         bkg.update(referencePoint);
         player.update(referencePoint, bulletList);
         bulletList.update(referencePoint);
+        en.update(referencePoint);
 
     }
 
