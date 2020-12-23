@@ -18,6 +18,7 @@ public class BLabel extends JLabel {
     public BLabel(JComponent superComp, ImageIcon image) {
         super(image);
         superDimen = superComp.getSize();
+        setSize(image);
         superComp.add(this);
 
     }
@@ -31,6 +32,7 @@ public class BLabel extends JLabel {
     public BLabel(JFrame superComp, ImageIcon image) {
         super(image);
         superDimen = superComp.getSize();
+        setSize(image);
         superComp.add(this);
 
     }

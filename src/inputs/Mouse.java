@@ -1,7 +1,10 @@
 package inputs;
 
 import types.code.Coordinate;
+import types.graphics.BFrame;
+import types.graphics.BLabel;
 
+import javax.swing.*;
 import java.awt.event.*;
 
 public class Mouse {
@@ -12,18 +15,21 @@ public class Mouse {
     private static MouseMotionListener mouseMotionListener;
     private static MouseWheelListener mouseWheelListener;
     private static boolean isInFrame;
+    private static BLabel mouseImage;
 
     private static boolean active = false;
 
     private Mouse() {}
 
-    public static void init() {
+    public static void init(JFrame frame) {
         if(!active) {
             active = true;
             buttons = new boolean[5];
             loc = new Coordinate();
             isInFrame = false;
             referencePoint = new Coordinate();
+            mouseImage = new BLabel(frame, Constants.mouseImg);
+            mouseImage.setBounds(0, 0);
 
             mouseListener = new MouseListener() {
                 public void mouseClicked(MouseEvent e) {}
@@ -38,10 +44,12 @@ public class Mouse {
 
                 public void mouseEntered(MouseEvent e) {
                     isInFrame = true;
+                    mouseImage.setVisible(true);
                 }
 
                 public void mouseExited(MouseEvent e) {
                     isInFrame = false;
+                    mouseImage.setVisible(false);
                 }
             };
 
@@ -50,12 +58,14 @@ public class Mouse {
                     double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
                     double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
                     loc.setXY(wantedX, wantedY);
+                    mouseImage.setBounds(wantedX - referencePoint.getX(), wantedY - referencePoint.getY());
                 }
 
                 public void mouseMoved(MouseEvent e) {
                     double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
                     double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
                     loc.setXY(wantedX, wantedY);
+                    mouseImage.setBounds(wantedX - referencePoint.getX(), wantedY - referencePoint.getY());
                 }
             };
 
