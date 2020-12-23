@@ -12,8 +12,8 @@ public class Enemy extends Entity {
 
     private Coordinate targetLoc;
 
-    public Enemy(JComponent game) {
-        super(game);
+    public Enemy(EnemyList enemyList) {
+        super(enemyList);
         setIcon(new ImageIcon("src/files/blue circle.png"));
         setSize(700, 700);
         setBounds(0, 0);
