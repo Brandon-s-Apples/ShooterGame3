@@ -21,10 +21,6 @@ public class Game extends BLabel {
         player = new Player(this);
         bulletList = new BulletList(this);
 
-        // Temporary
-        addBullet(new Coordinate(player.getLoc()), new Velocity(90, 2));
-        addBullet(new Coordinate(player.getLoc()), new Velocity(180, 3));
-
         Mouse.setReferencePoint(player.getLoc());
 
         bkg = new Background(this);
@@ -43,10 +39,6 @@ public class Game extends BLabel {
         player.update(bulletList);
         bulletList.update(player.getLoc());
 
-    }
-
-    public void addBullet(Coordinate startLoc, Velocity velocity) {
-        bulletList.add(startLoc, velocity);
     }
 
 }
