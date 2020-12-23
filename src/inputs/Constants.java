@@ -21,7 +21,7 @@ public class Constants {
     public static final int mainFrameWidth = 1900, mainFrameHeight = 1100;
 
     // Player.java
-    public static final Coordinate playerSpawn = new Coordinate(0, 0);
+    public static final Coordinate playerSpawnLoc = new Coordinate(0, 0);
     public static final double playerStandWidth = 100, playerStandHeight = 50;
     public static final double playerAcceleration = 5, playerDeceleration = 0.5, playerMaxSpeed = 5;
 

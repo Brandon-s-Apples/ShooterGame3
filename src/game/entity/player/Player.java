@@ -12,7 +12,7 @@ public class Player extends Entity {
 
     public Player(JComponent game) {
         super(game);
-        setLoc(new Coordinate(Constants.playerSpawn));
+        setLoc(new Coordinate(Constants.playerSpawnLoc));
         setMaxVel(Constants.playerMaxSpeed);
         setIcon(new ImageIcon("src/files/apple.png"));
         setSize(626, 626);
