@@ -28,6 +28,10 @@ public class BMath {
         if(coordinate.getX() < lineSegment.getStartLoc().getX() || coordinate.getX() > lineSegment.getEndLoc().getX()) return false;
         return coordinate.getY() == lineSegment.getSlope() * coordinate.getX() + lineSegment.getYInt();
     }
+    
+    public static boolean intersects(LineSegment lineSegment, Ellipse ellipse) {
+        Math.pow(x - ellipse.getCenter().getX, 2) / Math.pow(ellipse.getWidth / 2, 2) + Math.pow(, 2) / Math.pow(, 2) == 1;  
+    }
 
     public static double angleTo(Coordinate loc1, Coordinate loc2) {
         if(loc1.getX() == loc2.getX()) {
