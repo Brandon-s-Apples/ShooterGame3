@@ -1,9 +1,7 @@
 package game;
 
-import inputs.Constants;
-import inputs.Keyboard;
-import types.code.Coordinate;
-import types.code.Velocity;
+import inputs.*;
+import types.code.*;
 
 import javax.swing.*;
 

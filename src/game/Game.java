@@ -1,14 +1,10 @@
 package game;
 
-import inputs.Constants;
-import inputs.Mouse;
-import types.code.Coordinate;
-import types.code.Velocity;
+import inputs.*;
+import types.code.*;
 import types.graphics.BLabel;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
 
 public class Game extends BLabel {
 
@@ -16,9 +12,6 @@ public class Game extends BLabel {
 
     private Background bkg;
     private Player player;
-
-    // Temporary
-    private Bullet bullet;
     private BulletList bulletList;
 
     public Game(JFrame frame) {

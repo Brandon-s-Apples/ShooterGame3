@@ -1,8 +1,7 @@
 package game;
 
 import inputs.Constants;
-import types.code.Coordinate;
-import types.code.Velocity;
+import types.code.*;
 
 import javax.swing.*;
 
