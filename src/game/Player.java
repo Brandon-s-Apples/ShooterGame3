@@ -2,7 +2,6 @@ package game;
 
 import inputs.*;
 import types.code.*;
-import types.graphics.BLabel;
 
 import javax.swing.*;
 
@@ -15,8 +14,8 @@ public class Player extends Entity {
 
     }
 
-    public void update(BulletList bulletList) {
-        super.update(getLoc());
+    public void update(Coordinate referencePoint, BulletList bulletList) {
+        super.update(referencePoint);
         checkShoot(bulletList);
     }
 

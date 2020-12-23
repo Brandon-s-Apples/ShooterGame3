@@ -8,25 +8,28 @@ import javax.swing.*;
 
 public class Game extends BLabel {
 
-    private long timerVar;
-
     private Background bkg;
     private Player player;
     private BulletList bulletList;
+
+    private Coordinate referencePoint;
 
     public Game(JFrame frame) {
         super(frame);
         setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
         setBounds(0, 0);
+
         player = new Player(this);
+        referencePoint = player.getLoc();
+
         bulletList = new BulletList(this);
 
-        Mouse.setReferencePoint(player.getLoc());
+        Mouse.setReferencePoint(referencePoint);
 
         bkg = new Background(this);
 
         while(true) {
-            timerVar = System.currentTimeMillis();
+            long timerVar = System.currentTimeMillis();
             update();
             while(timerVar + Constants.gameLoopTimeMillis >= System.currentTimeMillis());
 
@@ -35,9 +38,9 @@ public class Game extends BLabel {
     }
 
     public void update() {
-        bkg.update(player.getLoc());
-        player.update(bulletList);
-        bulletList.update(player.getLoc());
+        bkg.update(referencePoint);
+        player.update(referencePoint, bulletList);
+        bulletList.update(referencePoint);
 
     }
 

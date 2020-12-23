@@ -16,8 +16,8 @@ public class Background extends BLabel {
 
     }
 
-    public void update(Coordinate playerLoc) {
-        setBounds(-playerLoc.getX(), -playerLoc.getY());
+    public void update(Coordinate referencePoint) {
+        setBounds(-referencePoint.getX(), -referencePoint.getY());
 
     }
 

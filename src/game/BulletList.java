@@ -25,8 +25,8 @@ public class BulletList extends BLabel {
         add(bulletList.get(bulletList.size() - 1));
     }
 
-    public void update(Coordinate playerLoc) {
-        setBounds(-playerLoc.getX(), -playerLoc.getY());
+    public void update(Coordinate referencePoint) {
+        setBounds(-referencePoint.getX(), -referencePoint.getY());
         for(int i = 0; i < bulletList.size(); i++) bulletList.get(i).update();
 
     }
