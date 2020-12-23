@@ -41,4 +41,9 @@ public class LineSegment {
 
     }
 
+    public double getSlope() {
+        return (startLoc.getX() - endLoc.getX()) / (startLoc.getY() - endLoc.getY());
+
+    }
+
 }
