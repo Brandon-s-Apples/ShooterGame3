@@ -40,7 +40,7 @@ public class Game extends BLabel {
 
     public void update() {
         bkg.update(player.getLoc());
-        player.update();
+        player.update(bulletList);
         bulletList.update(player.getLoc());
 
     }

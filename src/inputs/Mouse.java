@@ -83,4 +83,8 @@ public class Mouse {
         return mouseWheelListener;
     }
 
+    public static boolean getButton(int index) {
+        return buttons[index];
+    }
+
 }

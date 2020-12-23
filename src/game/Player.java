@@ -2,6 +2,7 @@ package game;
 
 import inputs.*;
 import types.code.*;
+import types.graphics.BLabel;
 
 import javax.swing.*;
 
@@ -14,9 +15,9 @@ public class Player extends Entity {
 
     }
 
-    public void update() {
+    public void update(BulletList bulletList) {
         super.update(getLoc());
-
+        checkShoot(bulletList);
     }
 
     void move(Coordinate loc, Velocity vel) {
@@ -31,6 +32,13 @@ public class Player extends Entity {
 
         loc.moveV(vel);
 
+    }
+
+    private void checkShoot(BulletList bulletList) {
+        if(Mouse.getButton(Constants.leftClick)) {
+            bulletList.add(new Coordinate(getLoc()), new Velocity(90, 10));
+
+        }
     }
 
 }
