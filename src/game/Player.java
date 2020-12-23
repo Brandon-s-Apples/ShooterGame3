@@ -21,7 +21,7 @@ public class Player extends Entity {
         checkShoot(bulletList);
     }
 
-    void move(Coordinate loc, Velocity vel) {
+    protected void move(Coordinate loc, Velocity vel) {
         boolean w = Keyboard.getKey('w') && !Keyboard.getKey('s'), a = Keyboard.getKey('a') && !Keyboard.getKey('d');
         boolean s = Keyboard.getKey('s') && !Keyboard.getKey('w'), d = Keyboard.getKey('d') && !Keyboard.getKey('a');
         if(w) vel.addAD(0, Constants.playerAcceleration);

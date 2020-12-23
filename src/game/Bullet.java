@@ -18,7 +18,7 @@ public class Bullet extends Entity {
 
     }
 
-    public void move(Coordinate loc, Velocity vel) {
+    protected void move(Coordinate loc, Velocity vel) {
         loc.moveV(vel);
     }
 

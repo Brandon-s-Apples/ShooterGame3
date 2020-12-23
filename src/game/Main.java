@@ -12,7 +12,7 @@ public class Main {
 
         frame.setVisible(true);
 
-        Game game = new Game(frame);
+        new Game(frame);
 
     }
 
