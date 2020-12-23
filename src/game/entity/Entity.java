@@ -8,20 +8,36 @@ import javax.swing.*;
 
 public abstract class Entity extends BLabel {
 
+    public enum State {
+        IDLE, CHARGING, ATTACKING, DYING, DEAD
+
+    }
+
     private Coordinate loc;
     private Velocity vel;
     private Ellipse standLoc;
+    private State state;
+
+    private long timer;
+
+    private double health;
 
     public Entity(JComponent game) {
         super(game);
         loc = new Coordinate();
         vel = new Velocity();
         standLoc = new Ellipse(loc, Constants.entityDefaultStandWidth, Constants.entityDefaultStandHeight);
+        state = State.IDLE;
+        health = 20;
 
     }
 
     public void update(Coordinate referencePoint) {
         move(loc, vel);
+        if(health <= 0 && (state != State.DYING && state != State.DEAD)) {
+            state = State.DYING;
+            timer = System.currentTimeMillis();
+        } else if(state == State.DYING && timer + Constants.dyingTime <= System.currentTimeMillis()) state = State.DEAD;
         setBounds(referencePoint);
     }
     protected abstract void move(Coordinate loc, Velocity vel);
