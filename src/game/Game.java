@@ -1,5 +1,7 @@
 package game;
 
+import game.entity.bullet.BulletList;
+import game.entity.player.Player;
 import inputs.*;
 import types.code.*;
 import types.graphics.BLabel;

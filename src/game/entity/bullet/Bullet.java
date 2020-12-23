@@ -1,5 +1,6 @@
-package game;
+package game.entity.bullet;
 
+import game.entity.Entity;
 import inputs.Constants;
 import types.code.*;
 

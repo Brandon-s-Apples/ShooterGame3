@@ -1,8 +1,6 @@
 package game;
 
 import inputs.Constants;
-import methods.BMath;
-import types.code.Coordinate;
 import types.graphics.BFrame;
 
 public class Main {

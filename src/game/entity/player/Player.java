@@ -1,5 +1,7 @@
-package game;
+package game.entity.player;
 
+import game.entity.bullet.BulletList;
+import game.entity.Entity;
 import inputs.*;
 import methods.BMath;
 import types.code.*;
