@@ -1,5 +1,6 @@
 package game.entity.enemy;
 
+import game.entity.Entity;
 import inputs.Constants;
 import types.code.Coordinate;
 import types.graphics.BLabel;
@@ -26,8 +27,17 @@ public class EnemyList extends BLabel {
 
     }
 
+    public void remove(int index) {
+        remove(enemyList.get(index));
+        enemyList.remove(index);
+    }
+
     public void update(Coordinate referencePoint) {
-        for(int i = 0; i < enemyList.size(); i++) enemyList.get(i).update(referencePoint);
+        for(int i = enemyList.size() - 1; i >= 0; i--) {
+            if(enemyList.get(i).getState() == Entity.State.DEAD) {
+                remove(i);
+            } else enemyList.get(i).update(referencePoint);
+        }
 
     }
 

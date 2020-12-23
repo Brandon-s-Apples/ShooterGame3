@@ -66,4 +66,8 @@ public abstract class Entity extends BLabel {
         setBounds(loc.getX() - referencePoint.getX(), loc.getY() - referencePoint.getY());
     }
 
+    public State getState() {
+        return state;
+    }
+
 }
