@@ -56,17 +56,18 @@ public class Mouse {
 
             mouseMotionListener = new MouseMotionListener() {
                 public void mouseDragged(MouseEvent e) {
-                    double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
-                    double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
+                    double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + referencePoint.getX();
+                    double wantedY = ((double) Constants.mainFrameHeight / 2) - e.getY() + referencePoint.getY();
                     loc.setXY(wantedX, wantedY);
+
                     wantedX = e.getX() - ((double) Constants.mouseImg.getIconWidth() / 2);
                     wantedY = e.getY() - ((double) Constants.mouseImg.getIconHeight() / 2);
                     mouseImage.setBounds((int) wantedX, (int) wantedY, Constants.mouseImg.getIconWidth(), Constants.mouseImg.getIconHeight());
                 }
 
                 public void mouseMoved(MouseEvent e) {
-                    double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
-                    double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
+                    double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + referencePoint.getX();
+                    double wantedY = ((double) Constants.mainFrameHeight / 2) - e.getY() + referencePoint.getY();
                     loc.setXY(wantedX, wantedY);
                     wantedX = e.getX() - ((double) Constants.mouseImg.getIconWidth() / 2);
                     wantedY = e.getY() - ((double) Constants.mouseImg.getIconHeight() / 2);
