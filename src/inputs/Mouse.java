@@ -15,7 +15,7 @@ public class Mouse {
     private static MouseMotionListener mouseMotionListener;
     private static MouseWheelListener mouseWheelListener;
     private static boolean isInFrame;
-    private static BLabel mouseImage;
+    private static JLabel mouseImage;
 
     private static boolean active = false;
 
@@ -28,8 +28,9 @@ public class Mouse {
             loc = new Coordinate();
             isInFrame = false;
             referencePoint = new Coordinate();
-            mouseImage = new BLabel(frame, Constants.mouseImg);
-            mouseImage.setBounds(0, 0);
+            mouseImage = new JLabel(Constants.mouseImg);
+            mouseImage.setBounds(0, 0, Constants.mouseImg.getIconWidth(), Constants.mouseImg.getIconHeight());
+            frame.add(mouseImage);
 
             mouseListener = new MouseListener() {
                 public void mouseClicked(MouseEvent e) {}
@@ -58,14 +59,18 @@ public class Mouse {
                     double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
                     double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
                     loc.setXY(wantedX, wantedY);
-                    mouseImage.setBounds(wantedX - referencePoint.getX(), wantedY - referencePoint.getY());
+                    wantedX = e.getX() - ((double) Constants.mouseImg.getIconWidth() / 2);
+                    wantedY = e.getY() - ((double) Constants.mouseImg.getIconHeight() / 2);
+                    mouseImage.setBounds((int) wantedX, (int) wantedY, Constants.mouseImg.getIconWidth(), Constants.mouseImg.getIconHeight());
                 }
 
                 public void mouseMoved(MouseEvent e) {
                     double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
                     double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
                     loc.setXY(wantedX, wantedY);
-                    mouseImage.setBounds(wantedX - referencePoint.getX(), wantedY - referencePoint.getY());
+                    wantedX = e.getX() - ((double) Constants.mouseImg.getIconWidth() / 2);
+                    wantedY = e.getY() - ((double) Constants.mouseImg.getIconHeight() / 2);
+                    mouseImage.setBounds((int) wantedX, (int) wantedY, Constants.mouseImg.getIconWidth(), Constants.mouseImg.getIconHeight());
                 }
             };
 

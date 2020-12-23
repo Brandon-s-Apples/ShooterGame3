@@ -32,9 +32,12 @@ public class Constants {
     // src/inputs/Mouse.java
     public static final int leftClick = 0, rightClick = 2, scrollClick = 1, forwardClick = 4, backClick = 3;
     public static final double xOffset = 0, yOffset = 0;
-    public static final ImageIcon mouseImg = new ImageIcon("D:/Pictures/apple.png");
+    public static final ImageIcon mouseImg = new ImageIcon("D:/Pictures/target.png");
 
     // src/types/code/Coordinate.java
     public static final Coordinate origin = new Coordinate(0, 0);
+
+    // src/types/graphics/BFrame.java
+    public static final ImageIcon windowIconImage = new ImageIcon("D:/Pictures/appleIcon.png");
 
 }
