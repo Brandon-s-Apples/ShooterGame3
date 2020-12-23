@@ -29,6 +29,7 @@ public class Game extends BLabel {
         referencePoint = player.getLoc();
 
         en = new Enemy(this);
+        en.setTargetLoc(player.getLoc());
 
         bulletList = new BulletList(this);
 
