@@ -21,11 +21,14 @@ public class BMath {
     public static boolean contains(Coordinate coordinate, LineSegment lineSegment) {
         if(lineSegment.isVertical()) {
             if(coordinate.getX() == lineSegment.getStartLoc().getX()) {
-                if(lineSegment.getStartLoc().getY() >= coordinate.getY() && lineSegment.getEndLoc().getY() <= coordinate.getY()) return true;
+                return lineSegment.getStartLoc().getY() >= coordinate.getY() && lineSegment.getEndLoc().getY() <= coordinate.getY();
 
-            } else return false;
+            }
+            return false;
 
         }
+        if(coordinate.getX() < lineSegment.getStartLoc().getX() || coordinate.getX() > lineSegment.getEndLoc().getX()) return false;
+        return coordinate.getY() == lineSegment.getSlope() * coordinate.getX() + lineSegment.getYInt();
 
     }
 
