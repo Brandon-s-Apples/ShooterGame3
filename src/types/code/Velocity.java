@@ -14,18 +14,36 @@ public class Velocity {
         xVel = 0;
         yVel = 0;
         this.maxSpeed = Math.abs(maxSpeed);
+        checkSpeed();
     }
 
-    public Velocity(double x, double y) {
-        xVel = x;
-        yVel = y;
+    public Velocity(double angle, double distance) {
+        angle %= 360;
+        if(angle == 0) yVel += distance;
+        else if(angle == 90 || angle == -270) xVel += distance;
+        else if(angle == 180 || angle == -180) yVel -= distance;
+        else if(angle == 270 || angle == -90) xVel -= distance;
+        else {
+            xVel = distance * Math.sin(Math.toRadians(angle));
+            yVel = distance * Math.cos(Math.toRadians(angle));
+
+        }
         maxSpeed = -1;
     }
 
-    public Velocity(double x, double y, double maxSpeed) {
-        xVel = x;
-        yVel = y;
+    public Velocity(double angle, double distance, double maxSpeed) {
+        angle %= 360;
+        if(angle == 0) yVel += distance;
+        else if(angle == 90 || angle == -270) xVel += distance;
+        else if(angle == 180 || angle == -180) yVel -= distance;
+        else if(angle == 270 || angle == -90) xVel -= distance;
+        else {
+            xVel = distance * Math.sin(Math.toRadians(angle));
+            yVel = distance * Math.cos(Math.toRadians(angle));
+
+        }
         this.maxSpeed = Math.abs(maxSpeed);
+        checkSpeed();
     }
 
     public void removeMaxSpeed() {

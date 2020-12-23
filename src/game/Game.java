@@ -29,8 +29,8 @@ public class Game extends BLabel {
         bulletList = new BulletList(this);
 
         // Temporary
-        addBullet(new Coordinate(player.getLoc()), new Velocity(2, 0));
-        addBullet(new Coordinate(player.getLoc()), new Velocity(-2, 0));
+        addBullet(new Coordinate(player.getLoc()), new Velocity(90, 2));
+        addBullet(new Coordinate(player.getLoc()), new Velocity(180, 3));
 
         Mouse.setReferencePoint(player.getLoc());
 
