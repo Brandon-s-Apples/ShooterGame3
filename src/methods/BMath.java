@@ -2,6 +2,7 @@ package methods;
 
 import types.code.Coordinate;
 import types.code.Ellipse;
+import types.code.LineSegment;
 
 public class BMath {
 
@@ -14,6 +15,20 @@ public class BMath {
         double x = Math.pow(coordinate.getX() - ellipse.getCenter().getX(), 2) / Math.pow(ellipse.getWidth() / 2, 2);
         double y = Math.pow(coordinate.getY() - ellipse.getCenter().getY(), 2) / Math.pow(ellipse.getHeight() / 2, 2);
         return (x + y <= 1);
+
+    }
+
+    public static boolean contains(Coordinate coordinate, LineSegment lineSegment) {
+        if(lineSegment.isVertical()) {
+            if(coordinate.getX() == lineSegment.getStartLoc().getX()) {
+                return lineSegment.getStartLoc().getY() >= coordinate.getY() && lineSegment.getEndLoc().getY() <= coordinate.getY();
+
+            }
+            return false;
+
+        }
+        if(coordinate.getX() < lineSegment.getStartLoc().getX() || coordinate.getX() > lineSegment.getEndLoc().getX()) return false;
+        return coordinate.getY() == lineSegment.getSlope() * coordinate.getX() + lineSegment.getYInt();
 
     }
 
