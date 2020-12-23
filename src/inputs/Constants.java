@@ -4,6 +4,8 @@ import types.code.Coordinate;
 
 public class Constants {
 
+    private Constants() {}
+
     // src/game/Entity.java
     public static final int entityDefaultStandWidth = 100, entityDefaultStandHeight = 50;
 
@@ -21,5 +23,9 @@ public class Constants {
     // src/inputs/Keyboard.java
     public static final int supportedKeys = 4;
     public static final int keyboardW = 0, keyboardA = 1, keyboardS = 2, keyboardD = 3;
+
+    // src/inputs/Mouse.java
+    public static final int leftClick = 1, rightClick = 3, scrollClick = 2, forwardClick = 4, backClick = 5;
+    public static final double xOffset = 0, yOffset = 0;
 
 }
