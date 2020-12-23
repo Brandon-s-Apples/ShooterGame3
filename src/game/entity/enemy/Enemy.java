@@ -18,6 +18,7 @@ public class Enemy extends Entity {
         setSize(700, 700);
         setBounds(0, 0);
         targetLoc = getLoc();
+        setMaxVel(Constants.enemyMaxSpeed);
     }
 
     protected void move(Coordinate loc, Velocity vel) {

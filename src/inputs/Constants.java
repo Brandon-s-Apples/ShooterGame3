@@ -26,7 +26,7 @@ public class Constants {
     public static final double playerAcceleration = 5, playerDeceleration = 0.5, playerMaxSpeed = 5;
 
     // Enemy.java
-    public static final double enemyAcceleration = 5;
+    public static final double enemyAcceleration = 1, enemyMaxSpeed = 3;
 
     // Keyboard.java
     public static final int supportedKeys = 4;
