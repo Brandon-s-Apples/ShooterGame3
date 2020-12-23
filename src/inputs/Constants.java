@@ -13,7 +13,6 @@ public class Constants {
 
     // Entity.java
     public static final int entityDefaultStandWidth = 100, entityDefaultStandHeight = 50;
-    public static final long dyingTime = 1000;
 
     // Game.java
     public static final long gameLoopTimeMillis = 15;
