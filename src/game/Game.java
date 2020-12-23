@@ -1,7 +1,6 @@
 package game;
 
 import game.entity.bullet.BulletList;
-import game.entity.enemy.Enemy;
 import game.entity.enemy.EnemyList;
 import game.entity.player.Player;
 import inputs.*;
@@ -12,24 +11,24 @@ import javax.swing.*;
 
 public class Game extends BLabel {
 
-    private Background bkg;
-    private Player player;
-    private BulletList bulletList;
-    private EnemyList enemyList;
+    private final Background bkg;
+    private final Player player;
+    private final BulletList bulletList;
+    private final EnemyList enemyList;
 
-    private Coordinate referencePoint;
+    private final Coordinate referencePoint;
 
     public Game(JFrame frame) {
         super(frame);
         setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
         setBounds(0, 0);
 
+        bulletList = new BulletList(this);
+
         player = new Player(this);
         referencePoint = player.getLoc();
 
         enemyList = new EnemyList(this);
-
-        bulletList = new BulletList(this);
 
         Mouse.setReferencePoint(referencePoint);
 
