@@ -1,6 +1,8 @@
 package game;
 
 import inputs.Constants;
+import methods.BMath;
+import types.code.Coordinate;
 import types.graphics.BFrame;
 
 public class Main {
@@ -10,7 +12,11 @@ public class Main {
 
         frame.setVisible(true);
 
-        Game game = new Game(frame);
+        Coordinate c1 = new Coordinate(0, 0);
+        Coordinate c2 = new Coordinate(-100, 75);
+        System.out.println(BMath.angleTo(c1, c2));
+
+        // Game game = new Game(frame);
 
     }
 

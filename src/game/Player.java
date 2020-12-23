@@ -11,7 +11,8 @@ public class Player extends Entity {
         super(game);
         setLoc(new Coordinate(Constants.playerSpawn));
         setMaxVel(Constants.playerMaxSpeed);
-
+        setIcon(new ImageIcon("D:/Pictures/apple.png"));
+        setSize(626, 626);
     }
 
     public void update(Coordinate referencePoint, BulletList bulletList) {

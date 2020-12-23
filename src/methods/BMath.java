@@ -17,4 +17,22 @@ public class BMath {
 
     }
 
+    public static double angleTo(Coordinate loc1, Coordinate loc2) {
+        if(loc1.getX() == loc2.getX()) {
+            if(loc1.getY() < loc2.getY()) return 0;
+            else return 180;
+
+        }
+        if(loc1.getY() == loc2.getY()) {
+            if(loc1.getX() < loc2.getX()) return 90;
+            else return 270;
+
+        }
+        double retVal = Math.toDegrees(Math.asin((loc2.getX() - loc1.getX()) / distanceFrom(loc1, loc2)));
+        if(loc2.getY() < loc1.getY()) retVal = 180 - retVal;
+        if(retVal < 0) retVal += 360;
+        return retVal;
+
+    }
+
 }
