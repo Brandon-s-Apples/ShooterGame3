@@ -103,4 +103,6 @@ public class Mouse {
         return buttons[index];
     }
 
+    public static Coordinate getLoc() {return loc;}
+
 }

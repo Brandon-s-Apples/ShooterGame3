@@ -1,6 +1,7 @@
 package game;
 
 import inputs.*;
+import methods.BMath;
 import types.code.*;
 
 import javax.swing.*;
@@ -36,8 +37,7 @@ public class Player extends Entity {
 
     private void checkShoot(BulletList bulletList) {
         if(Mouse.getButton(Constants.leftClick)) {
-            bulletList.add(new Coordinate(getLoc()), new Velocity(90, 10));
-
+            bulletList.add(new Coordinate(getLoc()), new Velocity(BMath.angleTo(getLoc(), Mouse.getLoc()), 10));
         }
     }
 
