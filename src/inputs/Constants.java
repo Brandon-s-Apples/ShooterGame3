@@ -9,7 +9,7 @@ public class Constants {
     private Constants() {}
 
     // Background.java
-    public static final ImageIcon bkgImg = new ImageIcon("src/files/FinishedProblems.PNG");
+    public static final ImageIcon bkgImg = new ImageIcon("src/files/among-us-map.png");
 
     // Entity.java
     public static final int entityDefaultStandWidth = 100, entityDefaultStandHeight = 50;
