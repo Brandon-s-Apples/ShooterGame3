@@ -25,7 +25,7 @@ public class Constants {
     public static final int keyboardW = 0, keyboardA = 1, keyboardS = 2, keyboardD = 3;
 
     // src/inputs/Mouse.java
-    public static final int leftClick = 1, rightClick = 3, scrollClick = 2, forwardClick = 4, backClick = 5;
+    public static final int leftClick = 0, rightClick = 2, scrollClick = 1, forwardClick = 4, backClick = 3;
     public static final double xOffset = 0, yOffset = 0;
 
 }

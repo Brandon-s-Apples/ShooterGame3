@@ -1,6 +1,7 @@
 package types.graphics;
 
 import inputs.Keyboard;
+import inputs.Mouse;
 
 import javax.swing.*;
 
@@ -15,6 +16,11 @@ public class BFrame extends JFrame {
 
         Keyboard.init();
         addKeyListener(Keyboard.getKeyListener());
+
+        Mouse.init();
+        addMouseListener(Mouse.getMouseListener());
+        addMouseMotionListener(Mouse.getMouseMotionListener());
+        addMouseWheelListener(Mouse.getMouseWheelListener());
 
     }
 

@@ -1,6 +1,7 @@
 package game;
 
 import inputs.Constants;
+import inputs.Mouse;
 import types.code.Coordinate;
 import types.code.Velocity;
 import types.graphics.BLabel;
@@ -23,6 +24,8 @@ public class Game extends BLabel {
         setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
         setBounds(0, 0);
         player = new Player(this);
+
+        Mouse.setReferencePoint(player.getLoc());
 
         bullet = new Bullet(this, new Coordinate(player.getLoc()), new Velocity(2, 0));
         bullet.setSize(626, 626);

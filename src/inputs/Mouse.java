@@ -2,10 +2,7 @@ package inputs;
 
 import types.code.Coordinate;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelListener;
+import java.awt.event.*;
 
 public class Mouse {
 
@@ -20,24 +17,23 @@ public class Mouse {
 
     private Mouse() {}
 
-    public static void init(Coordinate referencePoint) {
+    public static void init() {
         if(!active) {
             active = true;
             buttons = new boolean[5];
             loc = new Coordinate();
             isInFrame = false;
-            Mouse.referencePoint = referencePoint;
+            referencePoint = new Coordinate();
 
             mouseListener = new MouseListener() {
                 public void mouseClicked(MouseEvent e) {}
 
                 public void mousePressed(MouseEvent e) {
-                    buttons[e.getButton()] = true;
-                    System.out.println(e.getButton());
+                    buttons[e.getButton() - 1] = true;
                 }
 
                 public void mouseReleased(MouseEvent e) {
-                    buttons[e.getButton()] = false;
+                    buttons[e.getButton() - 1] = false;
                 }
 
                 public void mouseEntered(MouseEvent e) {
@@ -50,22 +46,29 @@ public class Mouse {
             };
 
             mouseMotionListener = new MouseMotionListener() {
-                @Override
                 public void mouseDragged(MouseEvent e) {
                     double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
                     double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
                     loc.setXY(wantedX, wantedY);
-                    System.out.println(wantedX + ", " + wantedY);
                 }
 
-                @Override
                 public void mouseMoved(MouseEvent e) {
-
+                    double wantedX = e.getX() - ((double) Constants.mainFrameWidth / 2) + Constants.xOffset + referencePoint.getX();
+                    double wantedY = -(e.getY() - ((double) Constants.mainFrameHeight / 2) + Constants.yOffset + referencePoint.getY());
+                    loc.setXY(wantedX, wantedY);
                 }
+            };
+
+            mouseWheelListener = e -> {
+
             };
 
         }
 
+    }
+
+    public static void setReferencePoint(Coordinate loc) {
+        Mouse.referencePoint = loc;
     }
 
     public static MouseListener getMouseListener() {
