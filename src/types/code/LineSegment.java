@@ -36,4 +36,9 @@ public class LineSegment {
         return endLoc;
     }
 
+    public boolean isVertical() {
+        return startLoc.getY() == endLoc.getY();
+
+    }
+
 }
