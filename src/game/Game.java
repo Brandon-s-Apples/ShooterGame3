@@ -8,6 +8,7 @@ import types.graphics.BLabel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Game extends BLabel {
 
@@ -18,18 +19,20 @@ public class Game extends BLabel {
 
     // Temporary
     private Bullet bullet;
+    private BulletList bulletList;
 
     public Game(JFrame frame) {
         super(frame);
         setSize(Constants.mainFrameWidth, Constants.mainFrameHeight);
         setBounds(0, 0);
         player = new Player(this);
+        bulletList = new BulletList(this);
+
+        // Temporary
+        addBullet(new Coordinate(player.getLoc()), new Velocity(2, 0));
+        addBullet(new Coordinate(player.getLoc()), new Velocity(-2, 0));
 
         Mouse.setReferencePoint(player.getLoc());
-
-        bullet = new Bullet(this, new Coordinate(player.getLoc()), new Velocity(2, 0));
-        bullet.setSize(626, 626);
-        bullet.setIcon(new ImageIcon("D:/Pictures/apple.png"));
 
         bkg = new Background(this);
 
@@ -45,9 +48,12 @@ public class Game extends BLabel {
     public void update() {
         bkg.update(player.getLoc());
         player.update();
+        bulletList.update(player.getLoc());
 
-        bullet.update(player.getLoc());
+    }
 
+    public void addBullet(Coordinate startLoc, Velocity velocity) {
+        bulletList.add(startLoc, velocity);
     }
 
 }
