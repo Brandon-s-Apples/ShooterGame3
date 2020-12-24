@@ -28,6 +28,7 @@ public class Bullet extends Entity {
         Coordinate startLoc = new Coordinate(getLoc());
         loc.moveV(vel);
         Coordinate endLoc = new Coordinate(getLoc());
+        LineSegment path = new LineSegment(startLoc, endLoc);
     }
 
     public void update() {
