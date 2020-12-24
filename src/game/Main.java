@@ -1,10 +1,6 @@
 package game;
 
 import inputs.Constants;
-import methods.BMath;
-import types.code.Coordinate;
-import types.code.Ellipse;
-import types.code.LineSegment;
 import types.graphics.BFrame;
 
 public class Main {
