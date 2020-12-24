@@ -29,8 +29,32 @@ public class BMath {
         return coordinate.getY() == lineSegment.getSlope() * coordinate.getX() + lineSegment.getYInt();
     }
     
-    public static boolean intersects(LineSegment lineSegment, Ellipse ellipse) {
-        Math.pow(x - ellipse.getCenter().getX, 2) / Math.pow(ellipse.getWidth / 2, 2) + Math.pow(, 2) / Math.pow(, 2) == 1;  
+    public static Coordinate[] intersects(LineSegment lineSegment, Ellipse ellipse) {
+        double cX = ellipse.getCenter().getX(), cY = ellipse.getCenter().getY();
+        double slope = lineSegment.getSlope(), yInt = lineSegment.getYInt();
+        double width = ellipse.getWidth() / 2, height = ellipse.getHeight() / 2;
+
+        double a = Math.pow(height, 2) + (Math.pow(slope * width, 2));
+        double b = (-2 * cX * Math.pow(height, 2)) + (2 * slope * yInt * Math.pow(width, 2)) - (2 * cY * slope * Math.pow(width, 2));
+        double c = (Math.pow(cX * height, 2)) + Math.pow(yInt * width, 2) + (2 * cY * yInt * Math.pow(width, 2)) + Math.pow(cY * width, 2) - Math.pow(width * height, 2);
+
+        Coordinate[] retVal;
+        double x = Math.pow(b, 2) - (4 * a * c);
+        if(x < 0) return new Coordinate[0];
+        x = Math.sqrt(x);
+        if (x == 0) {
+            retVal = new Coordinate[1];
+        }
+        else retVal = new Coordinate[2];
+
+        double x1 = (-b + x) / (2 * a);
+        retVal[0] = new Coordinate(x1, lineSegment.getSlope() * x1 + lineSegment.getYInt());
+
+        if(x > 0) {
+            double x2 = (-b - x) / (2 * a);
+            retVal[1] = new Coordinate(x2, lineSegment.getSlope() * x2 + lineSegment.getYInt());
+        }
+        return retVal;
     }
 
     public static double angleTo(Coordinate loc1, Coordinate loc2) {
