@@ -32,22 +32,38 @@ public class BMath {
     }
     
     public static Coordinate[] intersects(LineSegment lineSegment, Ellipse ellipse) {
-        double cX = ellipse.getCenter().getX(), cY = ellipse.getCenter().getY();
-        double slope = lineSegment.getSlope(), yInt = lineSegment.getYInt();
-        double width = ellipse.getWidth() / 2, height = ellipse.getHeight() / 2;
-
-        double a = Math.pow(height, 2) + Math.pow(slope * width, 2);
-        double b = (-2 * cX * Math.pow(height, 2)) + (2 * slope * yInt * Math.pow(width, 2)) - (2 * cY * slope * Math.pow(width, 2));
-        double c = (Math.pow(cX * height, 2)) + Math.pow(yInt * width, 2) - (2 * cY * yInt * Math.pow(width, 2)) + Math.pow(cY * width, 2) - Math.pow(width * height, 2);
-        double discriminant = Math.pow(b, 2) - (4 * a * c);
-
         ArrayList<Coordinate> retVal = new ArrayList<>();
-        if(discriminant >= 0) {
-            double xVal = (-b + Math.sqrt(discriminant)) / (2 * a);
-            retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
-            if(discriminant > 0) {
-                xVal = (-b - Math.sqrt(discriminant)) / (2 * a);
+        final double cX = ellipse.getCenter().getX(), cY = ellipse.getCenter().getY();
+        final double width = ellipse.getWidth() / 2, height = ellipse.getHeight() / 2;
+
+        if(lineSegment.isVertical()) {
+            double findX = lineSegment.getStartLoc().getX();
+            double startX = cX - (width / 2);
+            double endX = cX + (width / 2);
+            if(findX == startX || findX == endX) {
+                retVal.add(new Coordinate(findX, cY));
+            } else if(findX > startX && findX < endX) {
+                final double sqrt = height * Math.sqrt(1 - (Math.pow(findX - cX, 2) / Math.pow(width, 2)));
+                retVal.add(new Coordinate(findX, sqrt + cY));
+                retVal.add(new Coordinate(findX, -sqrt + cY));
+
+            }
+
+        } else {
+            final double slope = lineSegment.getSlope(), yInt = lineSegment.getYInt();
+
+            final double a = Math.pow(height, 2) + Math.pow(slope * width, 2);
+            final double b = (-2 * cX * Math.pow(height, 2)) + (2 * slope * yInt * Math.pow(width, 2)) - (2 * cY * slope * Math.pow(width, 2));
+            final double c = (Math.pow(cX * height, 2)) + Math.pow(yInt * width, 2) - (2 * cY * yInt * Math.pow(width, 2)) + Math.pow(cY * width, 2) - Math.pow(width * height, 2);
+            final double discriminant = Math.pow(b, 2) - (4 * a * c);
+
+            if(discriminant >= 0) {
+                double xVal = (-b + Math.sqrt(discriminant)) / (2 * a);
                 retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
+                if(discriminant > 0) {
+                    xVal = (-b - Math.sqrt(discriminant)) / (2 * a);
+                    retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
+                }
             }
         }
         for(int i = retVal.size() - 1; i >= 0; i--) if(!contains(retVal.get(i), lineSegment)) retVal.remove(i);
