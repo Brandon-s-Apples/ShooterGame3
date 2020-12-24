@@ -31,7 +31,7 @@ public class LineSegment {
     }
 
     public boolean isVertical() {
-        return startLoc.getY() == endLoc.getY();
+        return startLoc.getX() == endLoc.getX();
     }
 
     public double getSlope() {
