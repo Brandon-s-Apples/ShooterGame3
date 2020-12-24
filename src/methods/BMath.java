@@ -50,7 +50,6 @@ public class BMath {
                 retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
             }
         }
-        for(int i = retVal.size() - 1; i >= 0; i--) if(!contains(retVal.get(i), lineSegment)) retVal.remove(i);
         return BArray.toCoordinateArray(retVal);
 
     }
