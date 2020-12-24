@@ -43,13 +43,14 @@ public class BMath {
 
         ArrayList<Coordinate> retVal = new ArrayList<>();
         if(discriminant >= 0) {
-            double xVal = (Math.pow(b, 2) + Math.sqrt(discriminant)) / (4 * a);
+            double xVal = (-b + Math.sqrt(discriminant)) / (2 * a);
             retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
             if(discriminant > 0) {
-                xVal = (Math.pow(b, 2) - Math.sqrt(discriminant)) / (4 * a);
+                xVal = (-b - Math.sqrt(discriminant)) / (2 * a);
                 retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
             }
         }
+        for(int i = retVal.size() - 1; i >= 0; i--) if(!contains(retVal.get(i), lineSegment)) retVal.remove(i);
         return BArray.toCoordinateArray(retVal);
 
     }
