@@ -4,6 +4,8 @@ import types.code.Coordinate;
 import types.code.Ellipse;
 import types.code.LineSegment;
 
+import java.util.ArrayList;
+
 public class BMath {
 
     public static double distanceFrom(Coordinate loc1, Coordinate loc2) {
@@ -34,27 +36,22 @@ public class BMath {
         double slope = lineSegment.getSlope(), yInt = lineSegment.getYInt();
         double width = ellipse.getWidth() / 2, height = ellipse.getHeight() / 2;
 
-        double a = Math.pow(height, 2) + (Math.pow(slope * width, 2));
+        double a = Math.pow(height, 2) + Math.pow(slope * width, 2);
         double b = (-2 * cX * Math.pow(height, 2)) + (2 * slope * yInt * Math.pow(width, 2)) - (2 * cY * slope * Math.pow(width, 2));
-        double c = (Math.pow(cX * height, 2)) + Math.pow(yInt * width, 2) + (2 * cY * yInt * Math.pow(width, 2)) + Math.pow(cY * width, 2) - Math.pow(width * height, 2);
+        double c = (Math.pow(cX * height, 2)) + Math.pow(yInt * width, 2) - (2 * cY * yInt * Math.pow(width, 2)) + Math.pow(cY * width, 2) - Math.pow(width * height, 2);
+        double discriminant = Math.pow(b, 2) - (4 * a * c);
 
-        Coordinate[] retVal;
-        double x = Math.pow(b, 2) - (4 * a * c);
-        if(x < 0) return new Coordinate[0];
-        x = Math.sqrt(x);
-        if (x == 0) {
-            retVal = new Coordinate[1];
+        ArrayList<Coordinate> retVal = new ArrayList<>();
+        if(discriminant >= 0) {
+            double xVal = (Math.pow(b, 2) + Math.sqrt(discriminant)) / (4 * a);
+            retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
+            if(discriminant > 0) {
+                xVal = (Math.pow(b, 2) - Math.sqrt(discriminant)) / (4 * a);
+                retVal.add(new Coordinate(xVal, (slope * xVal) + yInt));
+            }
         }
-        else retVal = new Coordinate[2];
+        return BArray.toCoordinateArray(retVal);
 
-        double x1 = (-b + x) / (2 * a);
-        retVal[0] = new Coordinate(x1, lineSegment.getSlope() * x1 + lineSegment.getYInt());
-
-        if(x > 0) {
-            double x2 = (-b - x) / (2 * a);
-            retVal[1] = new Coordinate(x2, lineSegment.getSlope() * x2 + lineSegment.getYInt());
-        }
-        return retVal;
     }
 
     public static double angleTo(Coordinate loc1, Coordinate loc2) {
