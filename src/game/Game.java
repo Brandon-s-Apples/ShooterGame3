@@ -9,7 +9,7 @@ import types.graphics.BLabel;
 
 import javax.swing.*;
 
-public class Game extends BLabel implements Runnable {
+public class Game extends BLabel {
 
     private final Background bkg;
     private final Player player;
@@ -17,16 +17,6 @@ public class Game extends BLabel implements Runnable {
     private final EnemyList enemyList;
 
     private final Coordinate referencePoint;
-
-    public void run() {
-        while(true) {
-            long timerVar = System.currentTimeMillis();
-            update();
-            while(timerVar + Constants.gameLoopTimeMillis >= System.currentTimeMillis());
-
-        }
-
-    }
 
     public Game(JFrame frame) {
         super(frame);
@@ -43,6 +33,13 @@ public class Game extends BLabel implements Runnable {
         Mouse.setReferencePoint(referencePoint);
 
         bkg = new Background(this);
+
+        while(true) {
+            long timerVar = System.currentTimeMillis();
+            update();
+            while(timerVar + Constants.gameLoopTimeMillis >= System.currentTimeMillis());
+
+        }
 
     }
 
