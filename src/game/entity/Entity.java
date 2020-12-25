@@ -6,11 +6,21 @@ import types.graphics.BLabel;
 
 import javax.swing.*;
 
-public abstract class Entity extends BLabel {
+public abstract class Entity extends BLabel implements Runnable {
 
     private Coordinate loc;
     private Velocity vel;
     private Ellipse standLoc;
+
+    private Coordinate referencePoint;
+
+    public void run() {
+        while(true) {
+            update(referencePoint);
+
+        }
+
+    }
 
     public Entity(JComponent game) {
         super(game);
